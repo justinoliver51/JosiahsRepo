@@ -10,7 +10,7 @@
 #define JosiahsProjects_Header_h
 
 
-/*  How scoring is determined in tetris
+/*  How scoring is determined in tetris, where n is the current level:
  
  Points for 1 line:
  40 * (n + 1)
@@ -26,7 +26,7 @@
 
 */
 
-
+/*
 // This struct represents the scoreboard
 typedef struct
 {
@@ -36,9 +36,15 @@ typedef struct
     // Updates the score
     void (* updateScoreBoard)(int, int);
 } ScoreBoard;
+ */
+
+// The player's current score
+unsigned int score;
+
 
 // Initializes the scoreboard
-ScoreBoard *initializeScoreboard();
+void initializeScoreboard();
+
 
 // Updates the scoreboard
 void updateScoreBoard(int, int);

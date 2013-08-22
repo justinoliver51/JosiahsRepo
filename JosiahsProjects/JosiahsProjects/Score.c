@@ -10,12 +10,10 @@
 #include "Score.h"
 
 // Initializes the scoreboard
-ScoreBoard *initializeScoreboard()
+void initializeScoreboard()
 {
     
-    
-    // Needs to return the initialized scoreboard
-    return NULL;
+    return;
 }
 
 // Updates the scoreboard
