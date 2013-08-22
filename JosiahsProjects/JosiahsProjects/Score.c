@@ -42,7 +42,7 @@ void initializeScoreboard()
 //            int lines - number of lines destroyed
 //
 // Outputs:   None
-void updateScoreBoard(int level, int lines, long score)
+void updateScoreBoard(int level, int lines)
 {
     if(lines == 1)
     {
@@ -56,12 +56,12 @@ void updateScoreBoard(int level, int lines, long score)
     {
         score = 300 * (level + 1) + score;
     }
-    else if(lines >= 4)
+    else
     {
         score = 1200 * (level + 1) + score;
     }
     
-    printf("%ld, ", score);
+    printf("%d, ", score);
     
     return;
 }

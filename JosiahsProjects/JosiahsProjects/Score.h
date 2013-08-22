@@ -47,6 +47,6 @@ void initializeScoreboard();
 
 
 // Updates the scoreboard
-void updateScoreBoard(int, int, long);
+void updateScoreBoard(int, int);
 
 #endif
