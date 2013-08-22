@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39368BCF17C5AB58004181A9 /* Score.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BCE17C5AB58004181A9 /* Score.c */; };
 		CEBB1B7617BD953400DE198A /* arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7517BD953400DE198A /* arrays.c */; };
 		CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7D17BD9A6200DE198A /* strings.c */; };
 		CEBB1B8117BDA6C200DE198A /* testz.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8017BDA6C200DE198A /* testz.c */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		39368BCE17C5AB58004181A9 /* Score.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Score.c; sourceTree = "<group>"; };
+		39368BD017C5AB5D004181A9 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -50,6 +53,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39368BCA17C5AB2A004181A9 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB1B7B17BD99E900DE198A /* H Files */,
+				CEBB1B7A17BD99DC00DE198A /* C Files */,
+			);
+			name = Learning;
+			sourceTree = "<group>";
+		};
+		39368BCB17C5AB44004181A9 /* Tetris */ = {
+			isa = PBXGroup;
+			children = (
+				39368BCD17C5AB50004181A9 /* H Files */,
+				39368BCC17C5AB4B004181A9 /* C Files */,
+			);
+			name = Tetris;
+			sourceTree = "<group>";
+		};
+		39368BCC17C5AB4B004181A9 /* C Files */ = {
+			isa = PBXGroup;
+			children = (
+				39368BCE17C5AB58004181A9 /* Score.c */,
+			);
+			name = "C Files";
+			sourceTree = "<group>";
+		};
+		39368BCD17C5AB50004181A9 /* H Files */ = {
+			isa = PBXGroup;
+			children = (
+				39368BD017C5AB5D004181A9 /* Score.h */,
+			);
+			name = "H Files";
+			sourceTree = "<group>";
+		};
 		CEBB1B7A17BD99DC00DE198A /* C Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				CECE373F17B4656C003254BF /* main.c */,
-				CEBB1B7A17BD99DC00DE198A /* C Files */,
-				CEBB1B7B17BD99E900DE198A /* H Files */,
+				39368BCB17C5AB44004181A9 /* Tetris */,
+				39368BCA17C5AB2A004181A9 /* Learning */,
 				CEBB1B7C17BD99F500DE198A /* Resources */,
 			);
 			path = JosiahsProjects;
@@ -160,6 +197,7 @@
 				CEBB1B7617BD953400DE198A /* arrays.c in Sources */,
 				CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */,
 				CEBB1B8117BDA6C200DE198A /* testz.c in Sources */,
+				39368BCF17C5AB58004181A9 /* Score.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

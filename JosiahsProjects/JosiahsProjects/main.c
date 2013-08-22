@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
     
     return 0;
 }
-
+/*
 void swapCrap(int *ptrA, int *ptrB, int *ptrC)
 {
     int temp = *ptrB;
@@ -28,4 +28,4 @@ void swapCrap(int *ptrA, int *ptrB, int *ptrC)
     *ptrA = *ptrC;
     *ptrB = temp2;b,bm , ,vmcmmmmmnmvccfkxkxjghffglgklktktk,mrfmddmmfmfndrjrjedhk
     *ptrC = temp;
-}
+}*/
