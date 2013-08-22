@@ -9,15 +9,59 @@
 #include <stdio.h>
 #include "Score.h"
 
-// Initializes the scoreboard
+
+
+// ******** function_name **********
+// Description of function
+//
+// Inputs:    type input1 - short description
+//
+// Outputs:   type output1 - sh desc
+
+
+
+
+// ******** intializeScoreboard **********
+// This initializes our scoreboard.
+//
+// Inputs:    None
+//
+// Outputs:   None
 void initializeScoreboard()
 {
+    score = 0;
     
     return;
 }
 
-// Updates the scoreboard
-void updateScoreBoard(int level, int lines)
+
+// ******** updateScoreBoard **********
+// This function updates the scoreboard.
+//
+// Inputs:    int level - the current level
+//            int lines - number of lines destroyed
+//
+// Outputs:   None
+void updateScoreBoard(int level, int lines, long score)
 {
+    if(lines == 1)
+    {
+        score = 40 * (level + 1) + score;
+    }
+    else if(lines == 2)
+    {
+        score = 100 * (level + 1) + score;
+    }
+    else if(lines == 3)
+    {
+        score = 300 * (level + 1) + score;
+    }
+    else if(lines >= 4)
+    {
+        score = 1200 * (level + 1) + score;
+    }
+    
+    printf("%ld, ", score);
+    
     return;
 }
