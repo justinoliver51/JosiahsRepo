@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39368BCF17C5AB58004181A9 /* Score.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BCE17C5AB58004181A9 /* Score.c */; };
+		39368BD317C6DAA0004181A9 /* Player.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BD217C6DAA0004181A9 /* Player.c */; };
 		CEBB1B7617BD953400DE198A /* arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7517BD953400DE198A /* arrays.c */; };
 		CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7D17BD9A6200DE198A /* strings.c */; };
 		CEBB1B8117BDA6C200DE198A /* testz.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8017BDA6C200DE198A /* testz.c */; };
@@ -31,6 +32,9 @@
 /* Begin PBXFileReference section */
 		39368BCE17C5AB58004181A9 /* Score.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Score.c; sourceTree = "<group>"; };
 		39368BD017C5AB5D004181A9 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		39368BD117C6DA8E004181A9 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		39368BD217C6DAA0004181A9 /* Player.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Player.c; sourceTree = "<group>"; };
+		39368BD417C6DAF8004181A9 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		39368BCC17C5AB4B004181A9 /* C Files */ = {
 			isa = PBXGroup;
 			children = (
+				39368BD217C6DAA0004181A9 /* Player.c */,
 				39368BCE17C5AB58004181A9 /* Score.c */,
 			);
 			name = "C Files";
@@ -82,6 +87,8 @@
 		39368BCD17C5AB50004181A9 /* H Files */ = {
 			isa = PBXGroup;
 			children = (
+				39368BD417C6DAF8004181A9 /* Board.h */,
+				39368BD117C6DA8E004181A9 /* Player.h */,
 				39368BD017C5AB5D004181A9 /* Score.h */,
 			);
 			name = "H Files";
@@ -198,6 +205,7 @@
 				CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */,
 				CEBB1B8117BDA6C200DE198A /* testz.c in Sources */,
 				39368BCF17C5AB58004181A9 /* Score.c in Sources */,
+				39368BD317C6DAA0004181A9 /* Player.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

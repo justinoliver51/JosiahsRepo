@@ -8,24 +8,63 @@
 
 #include <stdio.h>
 #include "testz.h"
+#include "Score.h"
 
 
 // Function Declarations
-void swapValues(int *ptrA, int *ptrB);
-void swapCrap(int *ptrA, int *ptrB, int *ptrC);
+void testScoreBoard();
+void scanfExample();
+
 // Insert point
 int main(int argc, const char * argv[])
 {
-    testarrayMaximum();
+    scanfExample();
+    testScoreBoard();
     
     return 0;
 }
-/*
-void swapCrap(int *ptrA, int *ptrB, int *ptrC)
+
+
+void testScoreBoard()
 {
-    int temp = *ptrB;
-    int temp2 = *ptrA;
-    *ptrA = *ptrC;
-    *ptrB = temp2;b,bm , ,vmcmmmmmnmvccfkxkxjghffglgklktktk,mrfmddmmfmfndrjrjedhk
-    *ptrC = temp;
-}*/
+    unsigned long score;
+    
+    ScoreBoardPtr scoreBoardPtr = initializeScoreboard();
+    
+    // Update our score
+    scoreBoardPtr->updateScoreBoard(500000, 2);
+    
+    // Get our score
+    score = scoreBoardPtr->getScore();
+    
+    // Print it
+    printf("The score is: %ld", score);
+    
+    return;
+}
+
+void scanfExample()
+{
+    char str [80];
+    int i;
+    char input;
+    
+    printf ("Enter your family name: ");
+    scanf ("%s",str);
+    printf ("Enter your age: ");
+    scanf ("%d",&i);
+    printf ("Mr. %s , %d years old.\n",str,i);
+    printf ("Enter a hexadecimal number: ");
+    scanf ("%x",&i);
+    printf ("You have entered %#x (%d).\n",i,i);
+    
+    scanf("%c", &input);
+    
+    if(input == 'a')
+        printf("Input is 'a'!");
+    
+    if(i == 15)
+        printf("Joe is 15!");
+    
+    return;
+}

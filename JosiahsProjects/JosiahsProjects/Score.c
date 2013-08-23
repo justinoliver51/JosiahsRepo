@@ -9,17 +9,14 @@
 #include <stdio.h>
 #include "Score.h"
 
+// The player's current score
+static unsigned long score;
 
+// Updates the scoreboard
+void updateScoreBoard(int, int);
 
-// ******** function_name **********
-// Description of function
-//
-// Inputs:    type input1 - short description
-//
-// Outputs:   type output1 - sh desc
-
-
-
+// Returns the current score
+unsigned long getScore();
 
 // ******** intializeScoreboard **********
 // This initializes our scoreboard.
@@ -27,13 +24,19 @@
 // Inputs:    None
 //
 // Outputs:   None
-void initializeScoreboard()
+ScoreBoardPtr initializeScoreboard()
 {
+    // INITIALIZE GLOBALS
+    // Our initial score is 0
     score = 0;
     
-    return;
-}
+    // Initialize the struct that represents our ScoreBoard
+    ScoreBoardPtr scoreBoardPtr = (ScoreBoardPtr) malloc(sizeof( ScoreBoard ) );  // Allocates memory for the scoreboard
+    scoreBoardPtr->updateScoreBoard = &updateScoreBoard;
+    scoreBoardPtr->getScore = &getScore;
 
+    return scoreBoardPtr;
+}
 
 // ******** updateScoreBoard **********
 // This function updates the scoreboard.
@@ -61,7 +64,10 @@ void updateScoreBoard(int level, int lines)
         score = 1200 * (level + 1) + score;
     }
     
-    printf("%d, ", score);
-    
     return;
+}
+
+unsigned long getScore()
+{
+    return score;
 }
