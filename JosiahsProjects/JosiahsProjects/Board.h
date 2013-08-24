@@ -12,7 +12,17 @@
 // Make a struct for the player that contains two functions:
 
 
-
+typedef struct
+{
+    void cubeRotate()
+    {
+        return;
+    }
+    void cubeMove()
+    {
+        return;
+    }
+}
 // rotate
 
 

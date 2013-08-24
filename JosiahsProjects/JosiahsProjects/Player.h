@@ -12,5 +12,8 @@
 // The player waits for an input.  If it is the 'a', move left.  If it is the 'd', move right.  If it is the 's', move down.
 
 // Make a struct for the player that contains one function: 
-
+typedef struct
+{
+    if()
+}
 #endif
