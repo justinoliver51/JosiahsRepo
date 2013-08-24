@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		39368BCF17C5AB58004181A9 /* Score.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BCE17C5AB58004181A9 /* Score.c */; };
-		39368BD317C6DAA0004181A9 /* Player.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BD217C6DAA0004181A9 /* Player.c */; };
+		39368BF117C94CBF004181A9 /* OpenGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BF017C94CBF004181A9 /* OpenGL.c */; };
+		39368BF617C94DA2004181A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF317C94D84004181A9 /* OpenGL.framework */; };
+		39368BF917C94DB3004181A9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF717C94DAC004181A9 /* GLUT.framework */; };
 		CEBB1B7617BD953400DE198A /* arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7517BD953400DE198A /* arrays.c */; };
 		CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7D17BD9A6200DE198A /* strings.c */; };
 		CEBB1B8117BDA6C200DE198A /* testz.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8017BDA6C200DE198A /* testz.c */; };
@@ -32,9 +34,11 @@
 /* Begin PBXFileReference section */
 		39368BCE17C5AB58004181A9 /* Score.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Score.c; sourceTree = "<group>"; };
 		39368BD017C5AB5D004181A9 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
-		39368BD117C6DA8E004181A9 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		39368BD217C6DAA0004181A9 /* Player.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Player.c; sourceTree = "<group>"; };
 		39368BD417C6DAF8004181A9 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		39368BF017C94CBF004181A9 /* OpenGL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenGL.c; sourceTree = "<group>"; };
+		39368BF217C94CE8004181A9 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
+		39368BF317C94D84004181A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		39368BF717C94DAC004181A9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39368BF617C94DA2004181A9 /* OpenGL.framework in Frameworks */,
+				39368BF917C94DB3004181A9 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +84,8 @@
 		39368BCC17C5AB4B004181A9 /* C Files */ = {
 			isa = PBXGroup;
 			children = (
-				39368BD217C6DAA0004181A9 /* Player.c */,
 				39368BCE17C5AB58004181A9 /* Score.c */,
+				39368BF017C94CBF004181A9 /* OpenGL.c */,
 			);
 			name = "C Files";
 			sourceTree = "<group>";
@@ -88,10 +94,19 @@
 			isa = PBXGroup;
 			children = (
 				39368BD417C6DAF8004181A9 /* Board.h */,
-				39368BD117C6DA8E004181A9 /* Player.h */,
+				39368BF217C94CE8004181A9 /* OpenGL.h */,
 				39368BD017C5AB5D004181A9 /* Score.h */,
 			);
 			name = "H Files";
+			sourceTree = "<group>";
+		};
+		39368BF517C94D92004181A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39368BF717C94DAC004181A9 /* GLUT.framework */,
+				39368BF317C94D84004181A9 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CEBB1B7A17BD99DC00DE198A /* C Files */ = {
@@ -145,6 +160,7 @@
 				39368BCB17C5AB44004181A9 /* Tetris */,
 				39368BCA17C5AB2A004181A9 /* Learning */,
 				CEBB1B7C17BD99F500DE198A /* Resources */,
+				39368BF517C94D92004181A9 /* Frameworks */,
 			);
 			path = JosiahsProjects;
 			sourceTree = "<group>";
@@ -205,7 +221,7 @@
 				CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */,
 				CEBB1B8117BDA6C200DE198A /* testz.c in Sources */,
 				39368BCF17C5AB58004181A9 /* Score.c in Sources */,
-				39368BD317C6DAA0004181A9 /* Player.c in Sources */,
+				39368BF117C94CBF004181A9 /* OpenGL.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

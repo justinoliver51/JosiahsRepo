@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "testz.h"
 #include "Score.h"
+#include "OpenGL.h"
 
 
 // Function Declarations
@@ -18,8 +19,8 @@ void scanfExample();
 // Insert point
 int main(int argc, const char * argv[])
 {
-    scanfExample();
-    testScoreBoard();
+    // Display our game
+    //openGLInit(argc, argv);
     
     return 0;
 }
@@ -45,10 +46,10 @@ void testScoreBoard()
 
 void scanfExample()
 {
-    char str [80];
-    int i;
+    //char str [80];
+    //int i;
     char input;
-    
+    /*
     printf ("Enter your family name: ");
     scanf ("%s",str);
     printf ("Enter your age: ");
@@ -57,14 +58,12 @@ void scanfExample()
     printf ("Enter a hexadecimal number: ");
     scanf ("%x",&i);
     printf ("You have entered %#x (%d).\n",i,i);
-    
+    */
+    printf("Enter a character: ");
     scanf("%c", &input);
     
     if(input == 'a')
         printf("Input is 'a'!");
-    
-    if(i == 15)
-        printf("Joe is 15!");
     
     return;
 }
