@@ -9,7 +9,7 @@
 #ifndef JosiahsProjects_Board_h
 #define JosiahsProjects_Board_h
 
-// Make a struct for the player that contains two functions:
+// The BoardModel is responsible for understanding everything that occurs on the board.
 
 
 typedef struct

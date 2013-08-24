@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include "testz.h"
-#include "Score.h"
+#include "ScoreModel.h"
 #include "OpenGL.h"
 
 
@@ -20,7 +20,7 @@ void scanfExample();
 int main(int argc, const char * argv[])
 {
     // Display our game
-    //openGLInit(argc, argv);
+    openGLInit(argc, argv);
     
     return 0;
 }

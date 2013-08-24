@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39368BCF17C5AB58004181A9 /* Score.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BCE17C5AB58004181A9 /* Score.c */; };
+		39368BCF17C5AB58004181A9 /* ScoreModel.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BCE17C5AB58004181A9 /* ScoreModel.c */; };
 		39368BF117C94CBF004181A9 /* OpenGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BF017C94CBF004181A9 /* OpenGL.c */; };
 		39368BF617C94DA2004181A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF317C94D84004181A9 /* OpenGL.framework */; };
 		39368BF917C94DB3004181A9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF717C94DAC004181A9 /* GLUT.framework */; };
@@ -32,9 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		39368BCE17C5AB58004181A9 /* Score.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Score.c; sourceTree = "<group>"; };
-		39368BD017C5AB5D004181A9 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
-		39368BD417C6DAF8004181A9 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		39368BCE17C5AB58004181A9 /* ScoreModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ScoreModel.c; sourceTree = "<group>"; };
+		39368BD017C5AB5D004181A9 /* ScoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreModel.h; sourceTree = "<group>"; };
+		39368BD417C6DAF8004181A9 /* BoardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardModel.h; sourceTree = "<group>"; };
 		39368BF017C94CBF004181A9 /* OpenGL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenGL.c; sourceTree = "<group>"; };
 		39368BF217C94CE8004181A9 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
 		39368BF317C94D84004181A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -75,6 +75,9 @@
 		39368BCB17C5AB44004181A9 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				39368BFC17C95A41004181A9 /* Controllers */,
+				39368BFB17C95A38004181A9 /* Views */,
+				39368BFA17C95A32004181A9 /* Models */,
 				39368BCD17C5AB50004181A9 /* H Files */,
 				39368BCC17C5AB4B004181A9 /* C Files */,
 			);
@@ -84,8 +87,6 @@
 		39368BCC17C5AB4B004181A9 /* C Files */ = {
 			isa = PBXGroup;
 			children = (
-				39368BCE17C5AB58004181A9 /* Score.c */,
-				39368BF017C94CBF004181A9 /* OpenGL.c */,
 			);
 			name = "C Files";
 			sourceTree = "<group>";
@@ -93,9 +94,6 @@
 		39368BCD17C5AB50004181A9 /* H Files */ = {
 			isa = PBXGroup;
 			children = (
-				39368BD417C6DAF8004181A9 /* Board.h */,
-				39368BF217C94CE8004181A9 /* OpenGL.h */,
-				39368BD017C5AB5D004181A9 /* Score.h */,
 			);
 			name = "H Files";
 			sourceTree = "<group>";
@@ -107,6 +105,32 @@
 				39368BF317C94D84004181A9 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39368BFA17C95A32004181A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39368BD417C6DAF8004181A9 /* BoardModel.h */,
+				39368BD017C5AB5D004181A9 /* ScoreModel.h */,
+				39368BCE17C5AB58004181A9 /* ScoreModel.c */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		39368BFB17C95A38004181A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		39368BFC17C95A41004181A9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39368BF017C94CBF004181A9 /* OpenGL.c */,
+				39368BF217C94CE8004181A9 /* OpenGL.h */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		CEBB1B7A17BD99DC00DE198A /* C Files */ = {
@@ -220,7 +244,7 @@
 				CEBB1B7617BD953400DE198A /* arrays.c in Sources */,
 				CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */,
 				CEBB1B8117BDA6C200DE198A /* testz.c in Sources */,
-				39368BCF17C5AB58004181A9 /* Score.c in Sources */,
+				39368BCF17C5AB58004181A9 /* ScoreModel.c in Sources */,
 				39368BF117C94CBF004181A9 /* OpenGL.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

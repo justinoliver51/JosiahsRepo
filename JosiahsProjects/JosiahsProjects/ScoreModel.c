@@ -7,7 +7,7 @@
 //
 
 #include <stdio.h>
-#include "Score.h"
+#include "ScoreModel.h"
 
 // The player's current score
 static unsigned long score;
