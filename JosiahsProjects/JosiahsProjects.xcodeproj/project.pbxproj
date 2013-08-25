@@ -39,6 +39,7 @@
 		39368BF217C94CE8004181A9 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
 		39368BF317C94D84004181A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		39368BF717C94DAC004181A9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Model_View_Controller.rtf; sourceTree = "<group>"; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 				39368BFA17C95A32004181A9 /* Models */,
 				39368BCD17C5AB50004181A9 /* H Files */,
 				39368BCC17C5AB4B004181A9 /* C Files */,
+				39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */,
 			);
 			name = Tetris;
 			sourceTree = "<group>";
