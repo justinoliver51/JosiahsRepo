@@ -40,6 +40,7 @@
 		39368BF317C94D84004181A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		39368BF717C94DAC004181A9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Model_View_Controller.rtf; sourceTree = "<group>"; };
+		39897B8E17CAD6AE003CA5CE /* Outline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Outline.jpg; sourceTree = "<group>"; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 				39368BFB17C95A38004181A9 /* Views */,
 				39368BFA17C95A32004181A9 /* Models */,
 				39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */,
+				39897B8E17CAD6AE003CA5CE /* Outline.jpg */,
 			);
 			name = Tetris;
 			sourceTree = "<group>";
