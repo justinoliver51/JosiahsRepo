@@ -79,25 +79,9 @@
 				39368BFC17C95A41004181A9 /* Controllers */,
 				39368BFB17C95A38004181A9 /* Views */,
 				39368BFA17C95A32004181A9 /* Models */,
-				39368BCD17C5AB50004181A9 /* H Files */,
-				39368BCC17C5AB4B004181A9 /* C Files */,
 				39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */,
 			);
 			name = Tetris;
-			sourceTree = "<group>";
-		};
-		39368BCC17C5AB4B004181A9 /* C Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "C Files";
-			sourceTree = "<group>";
-		};
-		39368BCD17C5AB50004181A9 /* H Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "H Files";
 			sourceTree = "<group>";
 		};
 		39368BF517C94D92004181A9 /* Frameworks */ = {
