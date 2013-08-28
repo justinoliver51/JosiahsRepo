@@ -14,6 +14,7 @@
 		CEBB1B7617BD953400DE198A /* arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7517BD953400DE198A /* arrays.c */; };
 		CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7D17BD9A6200DE198A /* strings.c */; };
 		CEBB1B8117BDA6C200DE198A /* testz.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8017BDA6C200DE198A /* testz.c */; };
+		CEBB1B8417CD991400DE198A /* TimeModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8317CD991400DE198A /* TimeModel.c */; };
 		CECE374017B4656C003254BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CECE373F17B4656C003254BF /* main.c */; };
 		CECE374217B4656C003254BF /* JosiahsProjects.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CECE374117B4656C003254BF /* JosiahsProjects.1 */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		CEBB1B7F17BD9A7200DE198A /* strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strings.h; sourceTree = "<group>"; };
 		CEBB1B8017BDA6C200DE198A /* testz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testz.c; sourceTree = "<group>"; };
 		CEBB1B8217BDA76600DE198A /* testz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testz.h; sourceTree = "<group>"; };
+		CEBB1B8317CD991400DE198A /* TimeModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimeModel.c; sourceTree = "<group>"; };
 		CECE373C17B4656C003254BF /* JosiahsProjects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JosiahsProjects; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECE373F17B4656C003254BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CECE374117B4656C003254BF /* JosiahsProjects.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = JosiahsProjects.1; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				39368BD417C6DAF8004181A9 /* BoardModel.h */,
 				39368BD017C5AB5D004181A9 /* ScoreModel.h */,
 				39368BCE17C5AB58004181A9 /* ScoreModel.c */,
+				CEBB1B8317CD991400DE198A /* TimeModel.c */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				CEBB1B8117BDA6C200DE198A /* testz.c in Sources */,
 				39368BCF17C5AB58004181A9 /* ScoreModel.c in Sources */,
 				39368BF117C94CBF004181A9 /* OpenGL.c in Sources */,
+				CEBB1B8417CD991400DE198A /* TimeModel.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
