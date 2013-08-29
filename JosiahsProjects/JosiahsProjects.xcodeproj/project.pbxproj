@@ -49,6 +49,7 @@
 		CEBB1B8017BDA6C200DE198A /* testz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testz.c; sourceTree = "<group>"; };
 		CEBB1B8217BDA76600DE198A /* testz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testz.h; sourceTree = "<group>"; };
 		CEBB1B8317CD991400DE198A /* TimeModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimeModel.c; sourceTree = "<group>"; };
+		CEBB1B8517CD9A6900DE198A /* TimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeModel.h; sourceTree = "<group>"; };
 		CECE373C17B4656C003254BF /* JosiahsProjects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JosiahsProjects; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECE373F17B4656C003254BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CECE374117B4656C003254BF /* JosiahsProjects.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = JosiahsProjects.1; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 				39368BD017C5AB5D004181A9 /* ScoreModel.h */,
 				39368BCE17C5AB58004181A9 /* ScoreModel.c */,
 				CEBB1B8317CD991400DE198A /* TimeModel.c */,
+				CEBB1B8517CD9A6900DE198A /* TimeModel.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";

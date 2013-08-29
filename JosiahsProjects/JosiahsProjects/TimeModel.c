@@ -7,13 +7,29 @@
 //
 
 #include <stdio.h>
-void updateTime(int minute, int second)
+#include "TimeModel.h"
+
+unsigned char second;
+unsigned char minute;
+
+void updateTime()
 {
-    for(second = 0; second <= 60; second = second + 1)
-    second = second + 1
-    if(second = 60)
+    second = second + 1;
+    
+    if(second == 60)
     {
-        second = 0
-        minute = minute + 1
+        second = 0;
+        minute = minute + 1;
     }
-    {return;
+    return;
+}
+
+unsigned char getSecond()
+{
+    return second;
+}
+
+unsigned char getMinute()
+{
+    return minute;
+}
