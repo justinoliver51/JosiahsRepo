@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include "TimeModel.h"
 
+
+
 unsigned char second;
 unsigned char minute;
 
@@ -32,4 +34,19 @@ unsigned char getSecond()
 unsigned char getMinute()
 {
     return minute;
+}
+
+TimeBoardPtr initializetimeboard()
+{
+    // INITIALIZE GLOBALS
+    // Our initial score is 0
+    second = 0;
+    minute = 0;
+    
+    // Initialize the struct that represents our ScoreBoard
+    TimeBoardPtr timeBoardPtr = (TimeBoardPtr) malloc(sizeof( TimeBoard ) );  // Allocates memory for the scoreboard
+    timeBoardPtr->updateTime = &updateTime;
+    timeBoardPtr->getSecond = &getSecond;
+    
+    return timeBoardPtr;
 }

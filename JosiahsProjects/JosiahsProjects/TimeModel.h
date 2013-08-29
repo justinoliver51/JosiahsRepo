@@ -16,9 +16,11 @@ typedef struct
     void (* updateTime)();
     
     // Gets the current time
-    unsigned char (* getSecond);
+    unsigned char (* getSecond)();
     
-    unsigned char (* getMinute);
+    unsigned char (* getMinute)();
     
-} TimeBoard, *TimeBoard;
+} TimeBoard, *TimeBoardPtr;
+
+TimeBoardPtr initializetimeboard();
 #endif
