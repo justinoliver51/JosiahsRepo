@@ -29,7 +29,7 @@ void updateTime()
 unsigned char getSecond()
 {
     return second;
-}
+}*
 
 unsigned char getMinute()
 {
@@ -47,6 +47,8 @@ TimeBoardPtr initializetimeboard()
     TimeBoardPtr timeBoardPtr = (TimeBoardPtr) malloc(sizeof( TimeBoard ) );  // Allocates memory for the scoreboard
     timeBoardPtr->updateTime = &updateTime;
     timeBoardPtr->getSecond = &getSecond;
+    timeBoardPtr->getMinute = &getMinute;
+
     
     return timeBoardPtr;
 }
