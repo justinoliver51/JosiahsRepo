@@ -36,19 +36,18 @@ unsigned char getMinute()
     return minute;
 }
 
-TimeBoardPtr initializetimeboard()
+TimeModelPtr initializeTimeModel()
 {
     // INITIALIZE GLOBALS
-    // Our initial score is 0
-    second = 0;
-    minute = 0;
+    second = 0;             // seconds are initially zero
+    minute = 0;             // minutes are initially zero
     
     // Initialize the struct that represents our ScoreBoard
-    TimeBoardPtr timeBoardPtr = (TimeBoardPtr) malloc(sizeof( TimeBoard ) );  // Allocates memory for the scoreboard
-    timeBoardPtr->updateTime = &updateTime;
-    timeBoardPtr->getSecond = &getSecond;
-    timeBoardPtr->getMinute = &getMinute;
-
+    TimeModelPtr timeModelPtr = (TimeModelPtr) malloc(sizeof( TimeModel ) );  // Allocates memory for the scoreboard
     
-    return timeBoardPtr;
+    timeModelPtr->updateTime = &updateTime;
+    timeModelPtr->getSecond = &getSecond;
+    timeModelPtr->getMinute = &getMinute;
+    
+    return timeModelPtr;
 }

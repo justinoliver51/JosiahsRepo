@@ -17,8 +17,10 @@ typedef struct
 
 typedef struct
 {
-    void (* initializeShape)();
-} Shape, *ShapePtr;
+    // Rotates the position of the blocks for a shape
+    void (* rotate)();
+} ShapeModel, *ShapeModelPtr;
 
+ShapeModelPtr initializeShapeModel();
 
 #endif

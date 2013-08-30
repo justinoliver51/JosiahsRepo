@@ -20,7 +20,7 @@ typedef struct
     
     unsigned char (* getMinute)();
     
-} TimeBoard, *TimeBoardPtr;
+} TimeModel, *TimeModelPtr;
 
-TimeBoardPtr initializetimeboard();
+TimeModelPtr initializeTimeModel();
 #endif

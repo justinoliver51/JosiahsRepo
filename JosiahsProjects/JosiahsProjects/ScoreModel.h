@@ -13,11 +13,11 @@
 typedef struct
 {
     // Updates the score
-    void (* updateScoreBoard)(int, int);
+    void (* updateScore)(int, int);
     
     // Gets the current score
     unsigned long (* getScore)(void);
-} ScoreBoard, *ScoreBoardPtr;
+} ScoreModel, *ScoreModelPtr;
 
 
 // ******** intializeScoreboard **********
@@ -26,6 +26,6 @@ typedef struct
 // Inputs:    None
 //
 // Outputs:   None
-ScoreBoardPtr initializeScoreboard();
+ScoreModelPtr initializeScoreModel();
 
 #endif

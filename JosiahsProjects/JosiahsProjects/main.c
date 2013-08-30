@@ -13,7 +13,7 @@
 
 
 // Function Declarations
-void testScoreBoard();
+void testScoreModel();
 void scanfExample();
 
 // Insert point
@@ -26,17 +26,17 @@ int main(int argc, const char * argv[])
 }
 
 
-void testScoreBoard()
+void testScoreModel()
 {
     unsigned long score;
     
-    ScoreBoardPtr scoreBoardPtr = initializeScoreboard();
+    ScoreModelPtr scoreModelPtr = initializeScoreModel();
     
     // Update our score
-    scoreBoardPtr->updateScoreBoard(500000, 2);
+    scoreModelPtr->updateScore(500000, 2);
     
     // Get our score
-    score = scoreBoardPtr->getScore();
+    score = scoreModelPtr->getScore();
     
     // Print it
     printf("The score is: %ld", score);

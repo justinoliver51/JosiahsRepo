@@ -13,10 +13,8 @@
 
 typedef struct
 {
-    ShapePtr shape;
-    // this function rotates the position of the blocks for a shape
-    void (* rotate)();
-} TheStick, *StickPtr;
+    ShapeModelPtr shapePtr;
+} TheStickModel, *StickModelPtr;
 
 
 #endif

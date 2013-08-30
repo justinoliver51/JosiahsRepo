@@ -12,8 +12,8 @@
 // The player's current score
 static unsigned long score;
 
-// Updates the scoreboard
-void updateScoreBoard(int, int);
+// Updates the score
+void updateScore(int, int);
 
 // Returns the current score
 unsigned long getScore();
@@ -24,18 +24,18 @@ unsigned long getScore();
 // Inputs:    None
 //
 // Outputs:   None
-ScoreBoardPtr initializeScoreboard()
+ScoreModelPtr initializeScoreModel()
 {
     // INITIALIZE GLOBALS
     // Our initial score is 0
     score = 0;
     
     // Initialize the struct that represents our ScoreBoard
-    ScoreBoardPtr scoreBoardPtr = (ScoreBoardPtr) malloc(sizeof( ScoreBoard ) );  // Allocates memory for the scoreboard
-    scoreBoardPtr->updateScoreBoard = &updateScoreBoard;
-    scoreBoardPtr->getScore = &getScore;
+    ScoreModelPtr scoreModelPtr = (ScoreModelPtr) malloc(sizeof( ScoreModel ) );  // Allocates memory for the scoreboard
+    scoreModelPtr->updateScore = &updateScore;
+    scoreModelPtr->getScore = &getScore;
 
-    return scoreBoardPtr;
+    return scoreModelPtr;
 }
 
 // ******** updateScoreBoard **********
@@ -45,7 +45,7 @@ ScoreBoardPtr initializeScoreboard()
 //            int lines - number of lines destroyed
 //
 // Outputs:   None
-void updateScoreBoard(int level, int lines)
+void updateScore(int level, int lines)
 {
     if(lines == 1)
     {
