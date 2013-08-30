@@ -29,7 +29,7 @@ void updateTime()
 unsigned char getSecond()
 {
     return second;
-}*
+}
 
 unsigned char getMinute()
 {
