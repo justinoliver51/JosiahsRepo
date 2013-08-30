@@ -11,6 +11,26 @@
 
 #define NUMBER_OF_BLOCKS 4
 
+/*
+    y
+       ___ ___ ___ ___
+      |   |   |   |   |
+    4 |   |   |   | O |
+      |___|___|___|___|
+      |   |   |   |   |
+    2 |   |   |   | O |
+      |___|___|___|___|
+      |   |   |   |   |
+    1 |   |   |   | O |
+      |___|___|___|___|
+      |   |   |   |   |
+    0 |   |   |   | O |
+      |___|___|___|___|
+ 
+        0   1   2   3    x
+ 
+*/
+
 void rotate();
 
 // this is the array containing the locations for each of our blocks
@@ -28,14 +48,14 @@ StickModelPtr initializeTheStickModel()
     stickPtr->shapePtr->rotate = &rotate;
     
     // Initialize
-    positionArray[0].x = 0;
+    positionArray[0].x = 3;
     positionArray[0].y = 0;
-    positionArray[1].x = 0;
-    positionArray[1].y = 0;
-    positionArray[2].x = 0;
-    positionArray[2].y = 0;
-    positionArray[3].x = 0;
-    positionArray[3].y = 0;
+    positionArray[1].x = 3;
+    positionArray[1].y = 1;
+    positionArray[2].x = 3;
+    positionArray[2].y = 2;
+    positionArray[3].x = 3;
+    positionArray[3].y = 3;
     
     return stickPtr;
 }
