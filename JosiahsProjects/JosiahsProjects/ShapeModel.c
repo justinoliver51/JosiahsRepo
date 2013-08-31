@@ -7,8 +7,14 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "ShapeModel.h"
 
+// FUNCTION DECLARATIONS
+// Frees the allocated memory of the Score Model
+void freeShapeModel(void *shapeModel);
+
+// PRIVATE VARIABLES
 // The position of the blocks for that shape
 static unsigned int state;
 
@@ -24,6 +30,8 @@ ShapeModelPtr initializeShapeModel()
     
     // Initialize the struct that represents our ScoreBoard
     ShapeModelPtr shapePtr = (ShapeModelPtr) malloc(sizeof( ShapeModel ) );  // Allocates memory for the scoreboard
+    
+    shapePtr->free = &freeShapeModel;
     
     return shapePtr;
 }
@@ -41,3 +49,10 @@ ShapeModelPtr initializeShapeModel()
 
 
 // Accessor for the positionArray
+
+// Frees the allocated memory of the Score Model
+void freeShapeModel(void *shapeModel)
+{
+    ShapeModelPtr shapeModelPtr = (ShapeModelPtr) shapeModel;
+    free(shapeModelPtr);
+}

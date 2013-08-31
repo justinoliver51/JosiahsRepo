@@ -7,54 +7,16 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "TheStickModel.h"
 
 #define NUMBER_OF_BLOCKS 4
 
-/*
- 
-           State 0
-    y
-       ___ ___ ___ ___
-      |   |   |   |   |
-    4 |   |   |   | O |
-      |___|___|___|___|
-      |   |   |   |   |
-    2 |   |   |   | O |
-      |___|___|___|___|
-      |   |   |   |   |
-    1 |   |   |   | O |
-      |___|___|___|___|
-      |   |   |   |   |
-    0 |   |   |   | O |
-      |___|___|___|___|
- 
-        0   1   2   3    x
- 
- 
- 
-          State 1
-     y
-        ___ ___ ___ ___
-       |   |   |   |   |
-     4 |   |   |   |   |
-       |___|___|___|___|
-       |   |   |   |   |
-     2 |   |   |   |   |
-       |___|___|___|___|
-       |   |   |   |   |
-     1 |   |   |   |   |
-       |___|___|___|___|
-       |   |   |   |   |
-     0 | 0 | 0 | 0 | O |
-       |___|___|___|___|
-     
-       0   1   2   3    x
- 
-*/
-
+// FUNCTION DECLARATIONS
 void rotate();
+void freeStickModel(void *);
 
+// PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BLOCKS];
 
@@ -68,6 +30,7 @@ StickModelPtr initializeTheStickModel()
     
     stickPtr->shapePtr = initializeShapeModel();
     stickPtr->shapePtr->rotate = &rotate;
+    stickPtr->free = &freeStickModel;
     
     // Initialize
     positionArray[0].x = 3;
@@ -86,4 +49,12 @@ StickModelPtr initializeTheStickModel()
 void rotate()
 {
     return;
+}
+
+// Frees the allocated memory of the Score Model
+void freeStickModel(void *stickModel)
+{
+    StickModelPtr stickModelPtr = (StickModelPtr) stickModel;
+    stickModelPtr->shapePtr->free(stickModelPtr->shapePtr);
+    free(stickModelPtr);
 }

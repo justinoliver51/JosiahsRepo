@@ -15,10 +15,14 @@ typedef struct
     // Updates the time
     void (* updateTime)();
     
-    // Gets the current time
+    // Gets the current time's seconds
     unsigned char (* getSecond)();
     
+    // Gets the current time's minutes
     unsigned char (* getMinute)();
+    
+    // Free the score model
+    void (* free)(void *);
     
 } TimeModel, *TimeModelPtr;
 

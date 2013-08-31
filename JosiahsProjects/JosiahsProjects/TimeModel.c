@@ -7,9 +7,8 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "TimeModel.h"
-
-
 
 unsigned char second;
 unsigned char minute;
@@ -36,6 +35,14 @@ unsigned char getMinute()
     return minute;
 }
 
+// Frees the allocated memory of the Score Model
+void freeTimeModel(void *timeModel)
+{
+    TimeModelPtr timeModelPtr = (TimeModelPtr) timeModel;
+    free(timeModelPtr);
+}
+
+
 TimeModelPtr initializeTimeModel()
 {
     // INITIALIZE GLOBALS
@@ -48,6 +55,7 @@ TimeModelPtr initializeTimeModel()
     timeModelPtr->updateTime = &updateTime;
     timeModelPtr->getSecond = &getSecond;
     timeModelPtr->getMinute = &getMinute;
+    timeModelPtr->free = &freeTimeModel;
     
     return timeModelPtr;
 }

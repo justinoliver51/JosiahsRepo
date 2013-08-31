@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "ScoreModel.h"
 
 // The player's current score
@@ -17,6 +18,9 @@ void updateScore(int, int);
 
 // Returns the current score
 unsigned long getScore();
+
+// Frees the allocated memory of the Score Model
+void freeScoreModel(void *);
 
 // ******** intializeScoreboard **********
 // This initializes our scoreboard.
@@ -34,6 +38,7 @@ ScoreModelPtr initializeScoreModel()
     ScoreModelPtr scoreModelPtr = (ScoreModelPtr) malloc(sizeof( ScoreModel ) );  // Allocates memory for the scoreboard
     scoreModelPtr->updateScore = &updateScore;
     scoreModelPtr->getScore = &getScore;
+    scoreModelPtr->free = &freeScoreModel;
 
     return scoreModelPtr;
 }
@@ -70,4 +75,11 @@ void updateScore(int level, int lines)
 unsigned long getScore()
 {
     return score;
+}
+
+// Frees the allocated memory of the Score Model
+void freeScoreModel(void *scoreModel)
+{
+    ScoreModelPtr scoreModelPtr = (ScoreModelPtr) scoreModel;
+    free(scoreModelPtr);
 }

@@ -17,6 +17,9 @@ typedef struct
     
     // Gets the current score
     unsigned long (* getScore)(void);
+    
+    // Free the score model
+    void (* free)(void *);
 } ScoreModel, *ScoreModelPtr;
 
 
