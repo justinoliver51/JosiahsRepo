@@ -14,6 +14,10 @@
 // Frees the allocated memory of the Score Model
 void freeShapeModel(void *shapeModel);
 
+unsigned int getState();
+
+void setState(int);
+
 // PRIVATE VARIABLES
 // The position of the blocks for that shape
 static unsigned int state;
@@ -32,21 +36,32 @@ ShapeModelPtr initializeShapeModel()
     ShapeModelPtr shapePtr = (ShapeModelPtr) malloc(sizeof( ShapeModel ) );  // Allocates memory for the scoreboard
     
     shapePtr->free = &freeShapeModel;
-    
+    shapePtr->getState = &getState;
+    shapePtr->setState = &setState;
     return shapePtr;
 }
 
 // Accessor for color
+unsigned int getColor()
+{
+    return color;
+}
 
 
 // Setter for color
 
 
 // Accessor for state
-
+unsigned int getState()
+{
+    return state;
+}
 
 // Setter for state
-
+void setState(int newState)
+{
+    state = newState;
+}
 
 // Accessor for the positionArray
 

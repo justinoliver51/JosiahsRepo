@@ -20,6 +20,10 @@ typedef struct
     // Rotates the position of the blocks for a shape
     void (* rotate)();
     
+    unsigned int (* getState)();
+    
+    void (* setState)(int);
+    
     // Free the score model
     void (* free)(void *);
 } ShapeModel, *ShapeModelPtr;

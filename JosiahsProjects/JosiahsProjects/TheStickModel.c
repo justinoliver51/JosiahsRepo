@@ -19,6 +19,7 @@ void freeStickModel(void *);
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BLOCKS];
+static ShapeModelPtr shapePtr;
 
 StickModelPtr initializeTheStickModel()
 {
@@ -28,8 +29,8 @@ StickModelPtr initializeTheStickModel()
     // Initialize the struct that represents our ScoreBoard
     StickModelPtr stickPtr = (StickModelPtr) malloc(sizeof( TheStickModel ) );  // Allocates memory for TheStick
     
-    stickPtr->shapePtr = initializeShapeModel();
-    stickPtr->shapePtr->rotate = &rotate;
+    shapePtr = initializeShapeModel();
+    shapePtr->rotate = &rotate;
     stickPtr->free = &freeStickModel;
     
     // Initialize
@@ -48,13 +49,48 @@ StickModelPtr initializeTheStickModel()
 // There are two positions for a stick, vertical or horizontal.
 void rotate()
 {
+    if(shapePtr->getState() == 0)
+    {
+        
+        positionArray[0].x = positionArray[0].x - 3;
+        positionArray[0].y = positionArray[0].y - 0;
+        positionArray[1].x = positionArray[1].x - 3;
+        positionArray[1].y = positionArray[1].y - 1;
+        positionArray[2].x = positionArray[2].x - 3;
+        positionArray[2].y = positionArray[2].y - 2;
+        positionArray[3].x = positionArray[3].x - 3;
+        positionArray[3].y = positionArray[3].y - 3;
+        
+        shapePtr->setState(1);
+    }
+    
+    if(shapePtr->getState() == 1)
+    {
+        
+        
+        positionArray[0].x = positionArray[0].x + 3;
+        positionArray[0].y = positionArray[0].y + 0;
+        positionArray[1].x = positionArray[1].x + 3;
+        positionArray[1].y = positionArray[1].y + 1;
+        positionArray[2].x = positionArray[2].x + 3;
+        positionArray[2].y = positionArray[2].y + 2;
+        positionArray[3].x = positionArray[3].x + 3;
+        positionArray[3].y = positionArray[3].y + 3;
+        
+        shapePtr->setState(0);
+    }
+    
+    
+    
     return;
 }
+
 
 // Frees the allocated memory of the Score Model
 void freeStickModel(void *stickModel)
 {
+    
     StickModelPtr stickModelPtr = (StickModelPtr) stickModel;
-    stickModelPtr->shapePtr->free(stickModelPtr->shapePtr);
+    shapePtr->free(shapePtr);
     free(stickModelPtr);
 }
