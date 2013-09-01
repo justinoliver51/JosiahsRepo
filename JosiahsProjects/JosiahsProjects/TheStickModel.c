@@ -14,6 +14,7 @@
 
 // FUNCTION DECLARATIONS
 void rotate();
+void rotateStick();
 void freeStickModel(void *);
 
 // PRIVATE VARIABLES
@@ -30,7 +31,7 @@ StickModelPtr initializeTheStickModel()
     StickModelPtr stickPtr = (StickModelPtr) malloc(sizeof( TheStickModel ) );  // Allocates memory for TheStick
     
     shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotate;
+    shapePtr->rotate = &rotateStick;
     stickPtr->free = &freeStickModel;
     
     // Initialize
@@ -47,7 +48,7 @@ StickModelPtr initializeTheStickModel()
 }
 
 // There are two positions for a stick, vertical or horizontal.
-void rotate()
+void rotateStick()
 {
     if(shapePtr->getState() == 0)
     {

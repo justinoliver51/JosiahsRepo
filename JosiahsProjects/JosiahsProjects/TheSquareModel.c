@@ -14,6 +14,7 @@
 
 // FUNCTION DECLARATIONS
 void rotate();
+void rotateSquare();
 void freeSquareModel(void *);
 
 // PRIVATE VARIABLES
@@ -30,7 +31,7 @@ SquareModelPtr initializeTheSquareModel()
     SquareModelPtr squarePtr = (SquareModelPtr) malloc(sizeof( TheSquareModel ) );  // Allocates memory for Thesquare
     
     shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotate;
+    shapePtr->rotate = &rotateSquare;
     squarePtr->free = &freeSquareModel;
     
     // Initialize
@@ -46,10 +47,47 @@ SquareModelPtr initializeTheSquareModel()
     return squarePtr;
 }
 // There are two positions for a square, vertical or horizontal.
-void rotate()
-{    
+// There are two positions for a square, vertical or horizontal.
+void rotateSquare()
+{
+    if(shapePtr->getState() == 0)
+    {
+        
+        positionArray[0].x = positionArray[0].x - 3;
+        positionArray[0].y = positionArray[0].y - 0;
+        positionArray[1].x = positionArray[1].x - 3;
+        positionArray[1].y = positionArray[1].y - 1;
+        positionArray[2].x = positionArray[2].x - 3;
+        positionArray[2].y = positionArray[2].y - 2;
+        positionArray[3].x = positionArray[3].x - 3;
+        positionArray[3].y = positionArray[3].y - 3;
+        
+        shapePtr->setState(1);
+    }
+    
+    if(shapePtr->getState() == 1)
+    {
+        
+        
+        positionArray[0].x = positionArray[0].x + 3;
+        positionArray[0].y = positionArray[0].y + 0;
+        positionArray[1].x = positionArray[1].x + 3;
+        positionArray[1].y = positionArray[1].y + 1;
+        positionArray[2].x = positionArray[2].x + 3;
+        positionArray[2].y = positionArray[2].y + 2;
+        positionArray[3].x = positionArray[3].x + 3;
+        positionArray[3].y = positionArray[3].y + 3;
+        
+        shapePtr->setState(0);
+    }
+    
+    
+    
     return;
 }
+
+
+// Frees the allocated memory of the Score Model
 
 
 // Frees the allocated memory of the Score Model
