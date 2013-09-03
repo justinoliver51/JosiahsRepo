@@ -12,6 +12,7 @@
 		39368BF617C94DA2004181A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF317C94D84004181A9 /* OpenGL.framework */; };
 		39368BF917C94DB3004181A9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF717C94DAC004181A9 /* GLUT.framework */; };
 		CE71BE9C17D3A19500A817E4 /* TheSquareModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */; };
+		CE71BE9E17D5388B00A817E4 /* TheLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9D17D5388B00A817E4 /* TheLModel.c */; };
 		CEBB1B7617BD953400DE198A /* arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7517BD953400DE198A /* arrays.c */; };
 		CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7D17BD9A6200DE198A /* strings.c */; };
 		CEBB1B8117BDA6C200DE198A /* testz.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8017BDA6C200DE198A /* testz.c */; };
@@ -47,6 +48,8 @@
 		39897B8E17CAD6AE003CA5CE /* Outline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Outline.jpg; sourceTree = "<group>"; };
 		CE71BE9A17D39F9500A817E4 /* TheSquareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheSquareModel.h; sourceTree = "<group>"; };
 		CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheSquareModel.c; sourceTree = "<group>"; };
+		CE71BE9D17D5388B00A817E4 /* TheLModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheLModel.c; sourceTree = "<group>"; };
+		CE71BE9F17D5389A00A817E4 /* TheLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheLModel.h; sourceTree = "<group>"; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				CEBB1B8717D14E8A00DE198A /* ShapeModel.c */,
 				CE71BE9A17D39F9500A817E4 /* TheSquareModel.h */,
 				CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */,
+				CE71BE9D17D5388B00A817E4 /* TheLModel.c */,
+				CE71BE9F17D5389A00A817E4 /* TheLModel.h */,
 				CEBB1B8A17D154BD00DE198A /* TheStickModel.h */,
 				CEBB1B8B17D155BE00DE198A /* TheStickModel.c */,
 			);
@@ -266,6 +271,7 @@
 				CEBB1B8817D14E8A00DE198A /* ShapeModel.c in Sources */,
 				CEBB1B8C17D155BE00DE198A /* TheStickModel.c in Sources */,
 				CE71BE9C17D3A19500A817E4 /* TheSquareModel.c in Sources */,
+				CE71BE9E17D5388B00A817E4 /* TheLModel.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
