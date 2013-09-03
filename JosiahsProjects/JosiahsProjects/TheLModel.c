@@ -62,8 +62,9 @@ void rotateL()
         positionArray[3].x = positionArray[3].x - 1;
         positionArray[3].y = positionArray[3].y - 2;
         
-        shapePtr->setState(1);
+        
     }
+    shapePtr->setState(1);
     
     if(shapePtr->getState() == 1)
     {
@@ -76,9 +77,9 @@ void rotateL()
         positionArray[2].y = positionArray[2].y;
         positionArray[3].x = positionArray[3].x - 2;
         positionArray[3].y = positionArray[3].y;
-        
-        shapePtr->setState(2);
+
     }
+    shapePtr->setState(2);
     
     if(shapePtr->getState() == 2)
     {
@@ -92,8 +93,8 @@ void rotateL()
         positionArray[3].x = positionArray[3].x - 1;
         positionArray[3].y = positionArray[3].y - 2;
         
-        shapePtr->setState(3);
     }
+    shapePtr->setState(3);
     
     if(shapePtr->getState() == 3)
     {
@@ -106,9 +107,9 @@ void rotateL()
         positionArray[2].y = positionArray[2].y + 2;
         positionArray[3].x = positionArray[3].x + 1;
         positionArray[3].y = positionArray[3].y + 2;
-        
-        shapePtr->setState(2);
+ 
     }
+    shapePtr->setState(2);
     
     if(shapePtr->getState() == 2)
     {
@@ -121,9 +122,10 @@ void rotateL()
         positionArray[2].y = positionArray[2].y;
         positionArray[3].x = positionArray[3].x + 2;
         positionArray[3].y = positionArray[3].y;
-        
-        shapePtr->setState(1);
+
     }
+    shapePtr->setState(1);
+    
     if(shapePtr->getState() == 1)
     {
         
@@ -136,7 +138,6 @@ void rotateL()
         positionArray[3].x = positionArray[3].x + 1;
         positionArray[3].y = positionArray[3].y + 2;
         
-        shapePtr->setState(0);
     }
 
 
