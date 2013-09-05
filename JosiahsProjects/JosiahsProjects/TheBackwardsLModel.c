@@ -1,5 +1,5 @@
 //
-//  TheLModel.c
+//  TheBackwardsLModel.c
 //  JosiahsProjects
 //
 //  Created by User on 8/30/13.
@@ -8,33 +8,33 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "TheLModel.h"
+#include "TheBackwardsLModel.h"
 
-#define NUMBER_OF_BLOCKS 4
+#define NUMBER_OF_BBackwardsLOCKS 4
 
-// FUNCTION DECLARATIONS
+// FUNCTION DECBackwardsLARATIONS
 void rotate();
-void rotateL();
-void freeLModel(void *);
-void initializeLPoints(int x, int y);
+void rotateBackwardsL();
+void freeBackwardsLModel(void *);
+void initializeBackwardsLPoints(int x, int y);
 
-// PRIVATE VARIABLES
+// PRIVATE VARIABBackwardsLES
 // this is the array containing the locations for each of our blocks
-static Location positionArray[NUMBER_OF_BLOCKS];
+static Location positionArray[NUMBER_OF_BBackwardsLOCKS];
 static ShapeModelPtr shapePtr;
 
-LModelPtr initializeTheLModel()
+BackwardsLModelPtr initializeTheBackwardsLModel()
 {
-    // INITIALIZE GLOBALS
+    // INITIABackwardsLIZE GBackwardsLOBABackwardsLS
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    LModelPtr lPtr = (LModelPtr) malloc(sizeof( TheLModel ) );  // Allocates memory for TheL
+    BackwardsLModelPtr lPtr = (BackwardsLModelPtr) malloc(sizeof( TheBackwardsLModel ) );  // Allocates memory for TheBackwardsL
     
     shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateL;
-    shapePtr->initializePoints = &initializeLPoints;
-    lPtr->free = &freeLModel;
+    shapePtr->rotate = &rotateBackwardsL;
+    shapePtr->initializePoints = &initializeBackwardsLPoints;
+    lPtr->free = &freeBackwardsLModel;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -50,8 +50,8 @@ LModelPtr initializeTheLModel()
     return lPtr;
 }
 
-// this functions translates the L shape to the coordinate (x,y)
-void initializeLPoints(int x, int y)
+// this functions translates the BackwardsL shape to the coordinate (x,y)
+void initializeBackwardsLPoints(int x, int y)
 {
     positionArray[0].x = positionArray[0].x + x;
     positionArray[0].y = positionArray[0].y + y;
@@ -62,12 +62,12 @@ void initializeLPoints(int x, int y)
     positionArray[3].x = positionArray[3].x + x;
     positionArray[3].y = positionArray[3].y + y;
     
-
+    
     return;
 }
-// There are two positions for a L, vertical or horizontal.
-// There are two positions for a L, vertical or horizontal.
-void rotateL()
+// There are two positions for a BackwardsL, vertical or horizontal.
+// There are two positions for a BackwardsL, vertical or horizontal.
+void rotateBackwardsL()
 {
     if(shapePtr->getState() == 0)
     {
@@ -114,7 +114,7 @@ void rotateL()
         shapePtr->setState(3);
     }
     
-    else 
+    else
     {
         
         positionArray[0].x = positionArray[0].x;
@@ -138,10 +138,10 @@ void rotateL()
 
 // Frees the allocated memory of the Score Model
 
-void freeLModel(void *lModel)
+void freeBackwardsLModel(void *lModel)
 {
     
-    LModelPtr lModelPtr = (LModelPtr) lModel;
+    BackwardsLModelPtr lModelPtr = (BackwardsLModelPtr) lModel;
     shapePtr->free(shapePtr);
     free(lModelPtr);
 }

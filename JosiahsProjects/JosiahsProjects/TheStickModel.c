@@ -16,6 +16,7 @@
 void rotate();
 void rotateStick();
 void freeStickModel(void *);
+void initializeStickPoints(int x, int y);
 
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
@@ -32,6 +33,7 @@ StickModelPtr initializeTheStickModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateStick;
+    shapePtr->initializePoints = &initializeStickPoints;
     stickPtr->free = &freeStickModel;
     
     // Initialize
@@ -45,6 +47,21 @@ StickModelPtr initializeTheStickModel()
     positionArray[3].y = 3;
     
     return stickPtr;
+}
+// this functions translates the L shape to the coordinate (x,y)
+void initializeStickPoints(int x, int y)
+{
+    positionArray[0].x = positionArray[0].x + x;
+    positionArray[0].y = positionArray[0].y + y;
+    positionArray[1].x = positionArray[1].x + x;
+    positionArray[1].y = positionArray[1].y + y;
+    positionArray[2].x = positionArray[2].x + x;
+    positionArray[2].y = positionArray[2].y + y;
+    positionArray[3].x = positionArray[3].x + x;
+    positionArray[3].y = positionArray[3].y + y;
+    
+    
+    return;
 }
 
 // There are two positions for a stick, vertical or horizontal.

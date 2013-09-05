@@ -16,6 +16,7 @@
 void rotate();
 void rotateSquare();
 void freeSquareModel(void *);
+void initializeSquarePoints(int x, int y);
 
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
@@ -32,6 +33,7 @@ SquareModelPtr initializeTheSquareModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateSquare;
+    shapePtr->initializePoints = &initializeSquarePoints;
     squarePtr->free = &freeSquareModel;
     
     // Initialize
@@ -46,6 +48,22 @@ SquareModelPtr initializeTheSquareModel()
     
     return squarePtr;
 }
+
+void initializeSquarePoints(int x, int y)
+{
+    positionArray[0].x = positionArray[0].x + x;
+    positionArray[0].y = positionArray[0].y + y;
+    positionArray[1].x = positionArray[1].x + x;
+    positionArray[1].y = positionArray[1].y + y;
+    positionArray[2].x = positionArray[2].x + x;
+    positionArray[2].y = positionArray[2].y + y;
+    positionArray[3].x = positionArray[3].x + x;
+    positionArray[3].y = positionArray[3].y + y;
+    
+    
+    return;
+}
+
 // There are two positions for a square, vertical or horizontal.
 // There are two positions for a square, vertical or horizontal.
 void rotateSquare()

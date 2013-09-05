@@ -1,13 +1,13 @@
 //
-//  TheLModel.h
+//  TheBackwardsLModel.h
 //  JosiahsProjects
 //
 //  Created by User on 8/30/13.
 //  Copyright (c) 2013 Engineering. All rights reserved.
 //
 
-#ifndef JosiahsProjects_TheLModel_h
-#define JosiahsProjects_TheLModel_h
+#ifndef JosiahsProjects_TheBackwardsLModel_h
+#define JosiahsProjects_TheBackwardsLModel_h
 
 #include "ShapeModel.h"
 
@@ -17,20 +17,20 @@ typedef struct
     
     // Free the score model
     void (* free)(void *);
-} TheLModel, *LModelPtr;
+} TheBackwardsLModel, *BackwardsLModelPtr;
 
 /*
  State 0
      y
         ___ ___ ___ 
        |   |   |   |
-     2 | 3 |   |   |
+     2 |   |   | 3 |
        |___|___|___|
        |   |   |   |
-     1 | 2 |   |   |
+     1 |   |   | 2 |
        |___|___|___|
        |   |   |   |
-     0 | 0 | 1 |   |
+     0 |   | O | 1 |
        |___|___|___|
  
          0   1   2     x
@@ -43,10 +43,10 @@ typedef struct
      2 |   |   |   |
        |___|___|___|
        |   |   |   |
-     1 | 2 | 3 | 1 |
+     1 | 2 |   |   |
        |___|___|___|
        |   |   |   |
-     0 | 0 |   |   |
+     0 | 3 | 0 | 1 |
        |___|___|___|
  
          0   1   2     x
@@ -56,13 +56,13 @@ typedef struct
      y
         ___ ___ ___ 
        |   |   |   |
-     2 | 1 | 2 |   |
+     2 | O | 1 |   |
        |___|___|___|
        |   |   |   |
-     1 |   | 3 |   |
+     1 | 2 |   |   |
        |___|___|___|
        |   |   |   |
-     0 |   | 0 |   |
+     0 | 3 |   |   |
        |___|___|___|
  
          0   1   2     x
@@ -75,10 +75,10 @@ typedef struct
      2 |   |   |   |
        |___|___|___|
        |   |   |   |
-     1 |   |   | 1 |
+     1 | 2 | 0 | 1 |
        |___|___|___|
        |   |   |   |
-     0 | 2 | 0 | 3 |
+     0 | 3 |   |   |
        |___|___|___|
  
          0   1   2     x

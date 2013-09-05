@@ -17,6 +17,8 @@ typedef struct
 
 typedef struct
 {
+    void (* initializePoints)(int, int);
+    
     // Rotates the position of the blocks for a shape
     void (* rotate)();
     
@@ -26,6 +28,9 @@ typedef struct
     
     // Free the score model
     void (* free)(void *);
+    
+
+
 } ShapeModel, *ShapeModelPtr;
 
 ShapeModelPtr initializeShapeModel();
