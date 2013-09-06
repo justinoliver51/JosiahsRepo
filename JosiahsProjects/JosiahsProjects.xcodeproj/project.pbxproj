@@ -14,6 +14,8 @@
 		CE71BE9C17D3A19500A817E4 /* TheSquareModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */; };
 		CE71BE9E17D5388B00A817E4 /* TheLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9D17D5388B00A817E4 /* TheLModel.c */; };
 		CE71BEA217D8083C00A817E4 /* TheBackwardsLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BEA117D8083C00A817E4 /* TheBackwardsLModel.c */; };
+		CE71BEA517D95CFF00A817E4 /* TheZModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BEA417D95CFE00A817E4 /* TheZModel.c */; };
+		CE71BEA817D95EDE00A817E4 /* TheSModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BEA717D95EDE00A817E4 /* TheSModel.c */; };
 		CEBB1B7617BD953400DE198A /* arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7517BD953400DE198A /* arrays.c */; };
 		CEBB1B7E17BD9A6200DE198A /* strings.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B7D17BD9A6200DE198A /* strings.c */; };
 		CEBB1B8117BDA6C200DE198A /* testz.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBB1B8017BDA6C200DE198A /* testz.c */; };
@@ -53,6 +55,10 @@
 		CE71BE9F17D5389A00A817E4 /* TheLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheLModel.h; sourceTree = "<group>"; };
 		CE71BEA017D8082C00A817E4 /* TheBackwardsLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheBackwardsLModel.h; sourceTree = "<group>"; };
 		CE71BEA117D8083C00A817E4 /* TheBackwardsLModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheBackwardsLModel.c; sourceTree = "<group>"; };
+		CE71BEA317D95CF100A817E4 /* TheZModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheZModel.h; sourceTree = "<group>"; };
+		CE71BEA417D95CFE00A817E4 /* TheZModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheZModel.c; sourceTree = "<group>"; };
+		CE71BEA617D95ECF00A817E4 /* TheSModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheSModel.h; sourceTree = "<group>"; };
+		CE71BEA717D95EDE00A817E4 /* TheSModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheSModel.c; sourceTree = "<group>"; };
 		CEBB1B7517BD953400DE198A /* arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrays.c; sourceTree = "<group>"; };
 		CEBB1B7917BD980E00DE198A /* arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
 		CEBB1B7D17BD9A6200DE198A /* strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strings.c; sourceTree = "<group>"; };
@@ -179,6 +185,10 @@
 				CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */,
 				CE71BE9F17D5389A00A817E4 /* TheLModel.h */,
 				CE71BE9D17D5388B00A817E4 /* TheLModel.c */,
+				CE71BEA317D95CF100A817E4 /* TheZModel.h */,
+				CE71BEA417D95CFE00A817E4 /* TheZModel.c */,
+				CE71BEA617D95ECF00A817E4 /* TheSModel.h */,
+				CE71BEA717D95EDE00A817E4 /* TheSModel.c */,
 				CE71BEA017D8082C00A817E4 /* TheBackwardsLModel.h */,
 				CE71BEA117D8083C00A817E4 /* TheBackwardsLModel.c */,
 				CEBB1B8A17D154BD00DE198A /* TheStickModel.h */,
@@ -278,6 +288,8 @@
 				CE71BE9C17D3A19500A817E4 /* TheSquareModel.c in Sources */,
 				CE71BE9E17D5388B00A817E4 /* TheLModel.c in Sources */,
 				CE71BEA217D8083C00A817E4 /* TheBackwardsLModel.c in Sources */,
+				CE71BEA517D95CFF00A817E4 /* TheZModel.c in Sources */,
+				CE71BEA817D95EDE00A817E4 /* TheSModel.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
