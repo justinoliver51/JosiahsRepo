@@ -38,13 +38,13 @@ LModelPtr initializeTheLModel()
     
     // Initialize the shape
     // The board will initialize the offsets
-    positionArray[0].x = 1;
+    positionArray[0].x = 0;
     positionArray[0].y = 0;
-    positionArray[1].x = 2;
+    positionArray[1].x = 1;
     positionArray[1].y = 0;
-    positionArray[2].x = 2;
+    positionArray[2].x = 0;
     positionArray[2].y = 1;
-    positionArray[3].x = 2;
+    positionArray[3].x = 0;
     positionArray[3].y = 2;
     
     return lPtr;
@@ -74,12 +74,12 @@ void rotateL()
         
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
-        positionArray[1].x = positionArray[1].x;
-        positionArray[1].y = positionArray[1].y;
-        positionArray[2].x = positionArray[2].x - 2;
+        positionArray[1].x = positionArray[1].x + 1;
+        positionArray[1].y = positionArray[1].y + 1;
+        positionArray[2].x = positionArray[2].x;
         positionArray[2].y = positionArray[2].y;
-        positionArray[3].x = positionArray[3].x - 2;
-        positionArray[3].y = positionArray[3].y - 2;
+        positionArray[3].x = positionArray[3].x + 1;
+        positionArray[3].y = positionArray[3].y - 1;
         
         shapePtr->setState(1);
     }
@@ -87,12 +87,12 @@ void rotateL()
     else if(shapePtr->getState() == 1)
     {
         
-        positionArray[0].x = positionArray[0].x - 1;
-        positionArray[0].y = positionArray[0].y + 2;
+        positionArray[0].x = positionArray[0].x + 1;
+        positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x - 1;
-        positionArray[1].y = positionArray[1].y + 2;
-        positionArray[2].x = positionArray[2].x;
-        positionArray[2].y = positionArray[2].y;
+        positionArray[1].y = positionArray[1].y + 1;
+        positionArray[2].x = positionArray[2].x + 1;
+        positionArray[2].y = positionArray[2].y + 1;
         positionArray[3].x = positionArray[3].x;
         positionArray[3].y = positionArray[3].y;
         
@@ -102,14 +102,14 @@ void rotateL()
     else if(shapePtr->getState() == 2)
     {
         
-        positionArray[0].x = positionArray[0].x + 1;
-        positionArray[0].y = positionArray[0].y - 1;
-        positionArray[1].x = positionArray[1].x + 1;
+        positionArray[0].x = positionArray[0].x;
+        positionArray[0].y = positionArray[0].y;
+        positionArray[1].x = positionArray[1].x + 2;
         positionArray[1].y = positionArray[1].y - 1;
-        positionArray[2].x = positionArray[2].x;
-        positionArray[2].y = positionArray[2].y;
-        positionArray[3].x = positionArray[3].x;
-        positionArray[3].y = positionArray[3].y;
+        positionArray[2].x = positionArray[2].x - 1;
+        positionArray[2].y = positionArray[2].y - 2;
+        positionArray[3].x = positionArray[3].x + 1;
+        positionArray[3].y = positionArray[3].y - 1;
         
         shapePtr->setState(3);
     }
@@ -117,13 +117,13 @@ void rotateL()
     else 
     {
         
-        positionArray[0].x = positionArray[0].x;
-        positionArray[0].y = positionArray[0].y - 1;
-        positionArray[1].x = positionArray[1].x;
+        positionArray[0].x = positionArray[0].x - 1;
+        positionArray[0].y = positionArray[0].y;
+        positionArray[1].x = positionArray[1].x - 1;
         positionArray[1].y = positionArray[1].y - 1;
-        positionArray[2].x = positionArray[2].x + 2;
-        positionArray[2].y = positionArray[2].y;
-        positionArray[3].x = positionArray[3].x + 2;
+        positionArray[2].x = positionArray[2].x;
+        positionArray[2].y = positionArray[2].y + 1;
+        positionArray[3].x = positionArray[3].x - 2;
         positionArray[3].y = positionArray[3].y + 2;
         
         shapePtr->setState(0);
