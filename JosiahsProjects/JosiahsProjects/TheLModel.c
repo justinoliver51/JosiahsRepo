@@ -89,7 +89,7 @@ void rotateL()
         
         positionArray[0].x = positionArray[0].x + 1;
         positionArray[0].y = positionArray[0].y;
-        positionArray[1].x = positionArray[1].x - 1;
+        positionArray[1].x = positionArray[1].x - 2;
         positionArray[1].y = positionArray[1].y + 1;
         positionArray[2].x = positionArray[2].x + 1;
         positionArray[2].y = positionArray[2].y + 1;
