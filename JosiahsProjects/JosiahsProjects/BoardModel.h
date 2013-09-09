@@ -23,6 +23,28 @@ typedef struct
         return;
     }
 }
+
+typedef struct
+{
+    
+    void fall()
+    {
+        return;
+    }
+    void destroyLine()
+    {
+    return;
+    }
+    void lockShape()
+    {
+    return;
+    }
+    void interrupt2:UpdateBoard()
+    {
+    return;
+    }
+
+}
 // rotate
 
 
