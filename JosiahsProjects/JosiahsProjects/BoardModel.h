@@ -20,6 +20,8 @@
  ⁃	ylen - number of blocks long in y
  ⁃	fall( )
  ⁃	destroyLine( ) --- moves other li
+ ⁃	lockShape( )
+ ⁃	interrupt 2: updateBoard( )
 */
 
  //Example struct:
@@ -54,7 +56,7 @@ typedef struct
     {
         return;
     }
-    void interrupt2:UpdateBoard()
+    void updateBoard()
     {
         return;
     }
