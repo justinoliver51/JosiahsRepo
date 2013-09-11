@@ -11,18 +11,32 @@
 
 // The BoardModel is responsible for understanding everything that occurs on the board.
 
+/*
+ BoardModel's responsibilities:
+ ⁃	falling shape
+ ⁃	fall speed
+ ⁃	2-dimensional array of chars representing the board
+ ⁃	xlen - number of blocks long in x
+ ⁃	ylen - number of blocks long in y
+ ⁃	fall( )
+ ⁃	destroyLine( ) --- moves other li
+*/
 
+ //Example struct:
+ // This struct represents the scoreboard
 typedef struct
 {
-    void cubeRotate()
-    {
-        return;
-    }
-    void cubeMove()
-    {
-        return;
-    }
-}
+    // Updates the score
+    void (* updateScore)(int, int);
+    
+    // Gets the current score
+    unsigned long (* getScore)(void);
+    
+    // Free the score model
+    void (* free)(void *);
+} ScoreModel, *ScoreModelPtr;
+
+
 
 typedef struct
 {
@@ -31,17 +45,18 @@ typedef struct
     {
         return;
     }
+    
     void destroyLine()
     {
-    return;
+        return;
     }
     void lockShape()
     {
-    return;
+        return;
     }
     void interrupt2:UpdateBoard()
     {
-    return;
+        return;
     }
 
 }

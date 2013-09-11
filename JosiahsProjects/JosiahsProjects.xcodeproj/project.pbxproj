@@ -11,6 +11,7 @@
 		39368BF117C94CBF004181A9 /* OpenGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 39368BF017C94CBF004181A9 /* OpenGL.c */; };
 		39368BF617C94DA2004181A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF317C94D84004181A9 /* OpenGL.framework */; };
 		39368BF917C94DB3004181A9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF717C94DAC004181A9 /* GLUT.framework */; };
+		397ED0D917DFF088001387C0 /* BoardModel.c in Sources */ = {isa = PBXBuildFile; fileRef = 397ED0D817DFF088001387C0 /* BoardModel.c */; };
 		CE71BE9C17D3A19500A817E4 /* TheSquareModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */; };
 		CE71BE9E17D5388B00A817E4 /* TheLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9D17D5388B00A817E4 /* TheLModel.c */; };
 		CE71BEA217D8083C00A817E4 /* TheBackwardsLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BEA117D8083C00A817E4 /* TheBackwardsLModel.c */; };
@@ -48,6 +49,7 @@
 		39368BF217C94CE8004181A9 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
 		39368BF317C94D84004181A9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		39368BF717C94DAC004181A9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		397ED0D817DFF088001387C0 /* BoardModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BoardModel.c; sourceTree = "<group>"; };
 		39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Model_View_Controller.rtf; sourceTree = "<group>"; };
 		39897B8E17CAD6AE003CA5CE /* Outline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Outline.jpg; sourceTree = "<group>"; };
 		CE71BE9A17D39F9500A817E4 /* TheSquareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheSquareModel.h; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				39368BD417C6DAF8004181A9 /* BoardModel.h */,
+				397ED0D817DFF088001387C0 /* BoardModel.c */,
 				39368BD017C5AB5D004181A9 /* ScoreModel.h */,
 				39368BCE17C5AB58004181A9 /* ScoreModel.c */,
 				CEBB1B8517CD9A6900DE198A /* TimeModel.h */,
@@ -296,6 +299,7 @@
 				CE71BEA517D95CFF00A817E4 /* TheZModel.c in Sources */,
 				CE71BEA817D95EDE00A817E4 /* TheSModel.c in Sources */,
 				CE71BEAB17D960F900A817E4 /* TheTModel.c in Sources */,
+				397ED0D917DFF088001387C0 /* BoardModel.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
