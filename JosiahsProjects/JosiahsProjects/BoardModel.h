@@ -1,3 +1,4 @@
+
 //
 //  Board.h
 //  JosiahsProjects
@@ -9,45 +10,33 @@
 #ifndef JosiahsProjects_Board_h
 #define JosiahsProjects_Board_h
 
-// The BoardModel is responsible for understanding everything that occurs on the board.
-
-/*
- BoardModel's responsibilities:
- ⁃	fall( )
- ⁃	destroyLine( ) --- moves other li
- ⁃	lockShape( )
- ⁃	interrupt 2: updateBoard( )
-*/
+// The BoardModel is responsible for understanding everything that occurs on the board
 
 
 typedef struct
 {
+    //makes shapes fall down the board 1 space
+    void (* fall)();
     
-    void fall()
-    {
-        return;
-    }
+    //gets rid of a line when cubes occupy the entire line
+    void (* destroyLine)();
     
-    void destroyLine()
-    {
-        return;
-    }
-    void lockShape()
-    {
-        return;
-    }
-    void updateBoard()
-    {
-        return;
-    }
-
-}
-// rotate
+    //prevents user from being able to rotate the shape
+    void (* lockShape)();
+    
+    //called by an interrupt when its time to update the state of the board
+    void (* updateBoard)();
+    
+} BoardModel, *BoardModelPtr;
 
 
+// ******** intializeBoardModel **********
+// This initializes our boardModel.
+//
+// Inputs:    None
+//
+// Outputs:   None
 
-// move
-
-
+BoardModelPtr initializeBoardModel();
 
 #endif
