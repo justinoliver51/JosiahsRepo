@@ -16,7 +16,7 @@
 void rotate();
 void rotateS();
 void freeSModel(void *);
-void initializeSPoints(int x, int y);
+void moveS(int x, int y);
 
 // PRIVATE VARIABSES
 // this is the array containing the locations for each of our blocks
@@ -33,7 +33,7 @@ SModelPtr initializeTheSModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateS;
-    shapePtr->initializePoints = &initializeSPoints;
+    shapePtr->move = &moveS;
     lPtr->free = &freeSModel;
     
     // Initialize the shape
@@ -51,7 +51,7 @@ SModelPtr initializeTheSModel()
 }
 
 // this functions translates the S shape to the coordinate (x,y)
-void initializeSPoints(int x, int y)
+void moveS(int x, int y)
 {
     positionArray[0].x = positionArray[0].x + x;
     positionArray[0].y = positionArray[0].y + y;

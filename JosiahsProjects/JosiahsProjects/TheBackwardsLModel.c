@@ -16,7 +16,7 @@
 void rotate();
 void rotateBackwardsL();
 void freeBackwardsLModel(void *);
-void initializeBackwardsLPoints(int x, int y);
+void moveBackwardsL(int x, int y);
 
 // PRIVATE VARIABBackwardsLES
 // this is the array containing the locations for each of our blocks
@@ -33,7 +33,7 @@ BackwardsLModelPtr initializeTheBackwardsLModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateBackwardsL;
-    shapePtr->initializePoints = &initializeBackwardsLPoints;
+    shapePtr->move = &moveBackwardsL;
     lPtr->free = &freeBackwardsLModel;
     
     // Initialize the shape
@@ -51,7 +51,7 @@ BackwardsLModelPtr initializeTheBackwardsLModel()
 }
 
 // this functions translates the BackwardsL shape to the coordinate (x,y)
-void initializeBackwardsLPoints(int x, int y)
+void moveBackwardsL(int x, int y)
 {
     positionArray[0].x = positionArray[0].x + x;
     positionArray[0].y = positionArray[0].y + y;

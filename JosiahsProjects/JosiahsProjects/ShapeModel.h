@@ -17,7 +17,7 @@ typedef struct
 
 typedef struct
 {
-    void (* initializePoints)(int, int);
+    void (* move)(int, int);
     
     // Rotates the position of the blocks for a shape
     void (* rotate)();

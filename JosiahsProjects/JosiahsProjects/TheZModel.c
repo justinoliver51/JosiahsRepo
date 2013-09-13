@@ -16,7 +16,7 @@
 void rotate();
 void rotateZ();
 void freeZModel(void *);
-void initializeZPoints(int x, int y);
+void moveZ(int x, int y);
 
 // PRIVATE VARIABZES
 // this is the array containing the locations for each of our blocks
@@ -33,7 +33,7 @@ ZModelPtr initializeTheZModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateZ;
-    shapePtr->initializePoints = &initializeZPoints;
+    shapePtr->move = &moveZ;
     lPtr->free = &freeZModel;
     
     // Initialize the shape
@@ -51,7 +51,7 @@ ZModelPtr initializeTheZModel()
 }
 
 // this functions translates the Z shape to the coordinate (x,y)
-void initializeZPoints(int x, int y)
+void moveZ(int x, int y)
 {
     positionArray[0].x = positionArray[0].x + x;
     positionArray[0].y = positionArray[0].y + y;

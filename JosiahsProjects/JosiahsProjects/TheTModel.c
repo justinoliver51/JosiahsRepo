@@ -16,7 +16,7 @@
 void rotate();
 void rotateT();
 void freeTModel(void *);
-void initializeTPoints(int x, int y);
+void moveT(int x, int y);
 
 // PRIVATE VARIABTES
 // this is the array containing the locations for each of our blocks
@@ -33,7 +33,7 @@ TModelPtr initializeTModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateT;
-    shapePtr->initializePoints = &initializeTPoints;
+    shapePtr->move = &moveT;
     lPtr->free = &freeTModel;
     
     // Initialize the shape
@@ -51,7 +51,7 @@ TModelPtr initializeTModel()
 }
 
 // this functions translates the T shape to the coordinate (x,y)
-void initializeTPoints(int x, int y)
+void moveT(int x, int y)
 {
     positionArray[0].x = positionArray[0].x + x;
     positionArray[0].y = positionArray[0].y + y;

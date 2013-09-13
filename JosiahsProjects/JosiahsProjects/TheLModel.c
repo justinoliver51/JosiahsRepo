@@ -16,7 +16,7 @@
 void rotate();
 void rotateL();
 void freeLModel(void *);
-void initializeLPoints(int x, int y);
+void moveL(int x, int y);
 
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
@@ -33,7 +33,7 @@ LModelPtr initializeTheLModel()
     
     shapePtr = initializeShapeModel();
     shapePtr->rotate = &rotateL;
-    shapePtr->initializePoints = &initializeLPoints;
+    shapePtr->move = &moveL;
     lPtr->free = &freeLModel;
     
     // Initialize the shape
@@ -51,7 +51,7 @@ LModelPtr initializeTheLModel()
 }
 
 // this functions translates the L shape to the coordinate (x,y)
-void initializeLPoints(int x, int y)
+void moveL(int x, int y)
 {
     positionArray[0].x = positionArray[0].x + x;
     positionArray[0].y = positionArray[0].y + y;
