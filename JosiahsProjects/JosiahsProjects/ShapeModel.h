@@ -29,6 +29,8 @@ typedef struct
     // Free the score model
     void (* free)(void *);
     
+    // gets the location of the positionarray[int]
+    Location (* getBlockLocation)(int);
 
 
 } ShapeModel, *ShapeModelPtr;

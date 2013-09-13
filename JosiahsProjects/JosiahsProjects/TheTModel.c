@@ -17,6 +17,7 @@ void rotate();
 void rotateT();
 void freeTModel(void *);
 void moveT(int x, int y);
+Location getBlockLocation(int);
 
 // PRIVATE VARIABTES
 // this is the array containing the locations for each of our blocks

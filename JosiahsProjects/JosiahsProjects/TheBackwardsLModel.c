@@ -17,6 +17,7 @@ void rotate();
 void rotateBackwardsL();
 void freeBackwardsLModel(void *);
 void moveBackwardsL(int x, int y);
+Location getBlockLocation(int);
 
 // PRIVATE VARIABBackwardsLES
 // this is the array containing the locations for each of our blocks

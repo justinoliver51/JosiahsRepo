@@ -16,7 +16,7 @@
 typedef struct
 {
     //makes shapes fall down the board 1 space
-    void (* fall)();
+    int (* fall)();
     
     //gets rid of a line when cubes occupy the entire line
     void (* destroyLine)();

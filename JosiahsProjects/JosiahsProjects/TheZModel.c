@@ -17,6 +17,7 @@ void rotate();
 void rotateZ();
 void freeZModel(void *);
 void moveZ(int x, int y);
+Location getBlockLocation(int);
 
 // PRIVATE VARIABZES
 // this is the array containing the locations for each of our blocks
