@@ -62,14 +62,6 @@ BoardModelPtr initializeBoardModel()
 void fall()
 {
     
-    board[0].x = board[0].x - 1;
-    board[0].y = board[0].y - 1;
-    board[1].x = board[1].x - 1;
-    board[1].y = board[1].y - 1;
-    board[2].x = board[2].x - 1;
-    board[2].y = board[2].y - 1;
-    board[3].x = board[3].x - 1;
-    board[3].y = board[3].y - 1;
 
     return;
 }
