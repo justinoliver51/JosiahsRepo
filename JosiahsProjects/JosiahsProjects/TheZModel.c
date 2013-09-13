@@ -17,7 +17,7 @@ void rotate();
 void rotateZ();
 void freeZModel(void *);
 void moveZ(int x, int y);
-Location getBlockLocation(int);
+void getZPositionArray(LocationPtr);
 
 // PRIVATE VARIABZES
 // this is the array containing the locations for each of our blocks
@@ -36,6 +36,7 @@ ZModelPtr initializeTheZModel()
     shapePtr->rotate = &rotateZ;
     shapePtr->move = &moveZ;
     lPtr->free = &freeZModel;
+    shapePtr->getPositionArray = &getZPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -115,4 +116,19 @@ void freeZModel(void *lModel)
     ZModelPtr lModelPtr = (ZModelPtr) lModel;
     shapePtr->free(shapePtr);
     free(lModelPtr);
+}
+
+// Returns a copy of the positionArray
+void getZPositionArray(LocationPtr positionArrayCopy)
+{
+    positionArrayCopy[0].x = positionArray[0].x;
+    positionArrayCopy[0].y = positionArray[0].y;
+    positionArrayCopy[1].x = positionArray[1].x;
+    positionArrayCopy[1].y = positionArray[1].y;
+    positionArrayCopy[2].x = positionArray[2].x;
+    positionArrayCopy[2].y = positionArray[2].y;
+    positionArrayCopy[3].x = positionArray[3].x;
+    positionArrayCopy[3].y = positionArray[3].y;
+    
+    return;
 }

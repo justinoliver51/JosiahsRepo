@@ -9,14 +9,18 @@
 #ifndef JosiahsProjects_ShapeModel_h
 #define JosiahsProjects_ShapeModel_h
 
+#define NUMBER_OF_BLOCKS 4
+
 typedef struct
 {
     unsigned long x;
     unsigned long y;
-} Location;
+} Location, *LocationPtr;
 
 typedef struct
 {
+    // FUNCTIONS
+    // Moves the 
     void (* move)(int, int);
     
     // Rotates the position of the blocks for a shape
@@ -29,12 +33,14 @@ typedef struct
     // Free the score model
     void (* free)(void *);
     
-    // gets the location of the positionarray[int]
-    Location (* getBlockLocation)(int);
+    // Returns a copy of the position array of the specific shape
+    void (* getPositionArray)(LocationPtr);
 
 
 } ShapeModel, *ShapeModelPtr;
 
+
+// Functions
 ShapeModelPtr initializeShapeModel();
 
 #endif

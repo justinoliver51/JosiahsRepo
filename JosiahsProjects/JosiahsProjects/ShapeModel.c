@@ -11,11 +11,8 @@
 #include "ShapeModel.h"
 
 // FUNCTION DECLARATIONS
-// Frees the allocated memory of the Score Model
 void freeShapeModel(void *shapeModel);
-
 unsigned int getState();
-
 void setState(int);
 
 // PRIVATE VARIABLES
@@ -38,6 +35,7 @@ ShapeModelPtr initializeShapeModel()
     shapePtr->free = &freeShapeModel;
     shapePtr->getState = &getState;
     shapePtr->setState = &setState;
+    
     return shapePtr;
 }
 
@@ -62,8 +60,6 @@ void setState(int newState)
 {
     state = newState;
 }
-
-// Accessor for the positionArray
 
 // Frees the allocated memory of the Score Model
 void freeShapeModel(void *shapeModel)

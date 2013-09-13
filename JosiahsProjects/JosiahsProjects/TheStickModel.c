@@ -17,7 +17,7 @@ void rotate();
 void rotateStick();
 void freeStickModel(void *);
 void moveStick(int x, int y);
-Location getBlockLocation(int);
+void getStickPositionArray(LocationPtr);
 
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
@@ -36,6 +36,7 @@ StickModelPtr initializeTheStickModel()
     shapePtr->rotate = &rotateStick;
     shapePtr->move = &moveStick;
     stickPtr->free = &freeStickModel;
+    shapePtr->getPositionArray = &getStickPositionArray;
     
     // Initialize
     positionArray[0].x = 3;
@@ -104,7 +105,6 @@ void rotateStick()
     return;
 }
 
-
 // Frees the allocated memory of the Score Model
 void freeStickModel(void *stickModel)
 {
@@ -112,4 +112,19 @@ void freeStickModel(void *stickModel)
     StickModelPtr stickModelPtr = (StickModelPtr) stickModel;
     shapePtr->free(shapePtr);
     free(stickModelPtr);
+}
+
+// Returns a copy of the positionArray
+void getStickPositionArray(LocationPtr positionArrayCopy)
+{
+    positionArrayCopy[0].x = positionArray[0].x;
+    positionArrayCopy[0].y = positionArray[0].y;
+    positionArrayCopy[1].x = positionArray[1].x;
+    positionArrayCopy[1].y = positionArray[1].y;
+    positionArrayCopy[2].x = positionArray[2].x;
+    positionArrayCopy[2].y = positionArray[2].y;
+    positionArrayCopy[3].x = positionArray[3].x;
+    positionArrayCopy[3].y = positionArray[3].y;
+    
+    return;
 }

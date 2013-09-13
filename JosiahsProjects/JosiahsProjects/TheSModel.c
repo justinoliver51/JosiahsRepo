@@ -17,7 +17,7 @@ void rotate();
 void rotateS();
 void freeSModel(void *);
 void moveS(int x, int y);
-Location getBlockLocation(int);
+void getSPositionArray(LocationPtr);
 
 // PRIVATE VARIABSES
 // this is the array containing the locations for each of our blocks
@@ -36,6 +36,7 @@ SModelPtr initializeTheSModel()
     shapePtr->rotate = &rotateS;
     shapePtr->move = &moveS;
     lPtr->free = &freeSModel;
+    shapePtr->getPositionArray = &getSPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -115,4 +116,19 @@ void freeSModel(void *lModel)
     SModelPtr lModelPtr = (SModelPtr) lModel;
     shapePtr->free(shapePtr);
     free(lModelPtr);
+}
+
+// Returns a copy of the positionArray
+void getSPositionArray(LocationPtr positionArrayCopy)
+{
+    positionArrayCopy[0].x = positionArray[0].x;
+    positionArrayCopy[0].y = positionArray[0].y;
+    positionArrayCopy[1].x = positionArray[1].x;
+    positionArrayCopy[1].y = positionArray[1].y;
+    positionArrayCopy[2].x = positionArray[2].x;
+    positionArrayCopy[2].y = positionArray[2].y;
+    positionArrayCopy[3].x = positionArray[3].x;
+    positionArrayCopy[3].y = positionArray[3].y;
+    
+    return;
 }
