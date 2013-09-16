@@ -70,27 +70,38 @@ BoardModelPtr initializeBoardModel()
 // Inputs:    None
 //
 // Outputs:   0 if shape is placed correctly, 1 if not
-
 int fall()
 {
-    //we're trying to make the shape fall by 1 every time the function is called
+    // Shifts the shape down one block on the board
     fallingShapePtr->move(0, -1);
     
-    //this checks if the shape is placed correctly, and returns 0 if it is, 1 if not
+    // If the shape can be placed, return 0
     if(1)
     {
         return 0;
     }
-    
+    // Otherwise return 1
     else
         return 1;
 }
 
+// ******** destroyLine **********
+// makes shapes fall down the board 1 space
+//
+// Inputs:    None
+//
+// Outputs:   0 if shape is placed correctly, 1 if not
 void destroyLine()
 {
     return;
 }
 
+// ******** lockShape **********
+// makes shapes fall down the board 1 space
+//
+// Inputs:    None
+//
+// Outputs:   0 if shape is placed correctly, 1 if not
 void lockShape()
 {
     return;
@@ -99,12 +110,15 @@ void lockShape()
 void updateBoard()
 {
     //this function is supposed to decide when each other function is called
-    int fall();
-    if(fall() = 0);
+    int 
+    int fellIncorrectly = fall();
+    
+    // If 
+    if(fellIncorrectly)
     {
-        void lockshape();
+        lockShape();
         
-        if(lockShape() = 0)
+        if(lockShape() == 0)
         {
             void destroyLine();
         }
