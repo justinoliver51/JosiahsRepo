@@ -98,6 +98,19 @@ void lockShape()
 
 void updateBoard()
 {
+    //this function is supposed to decide when each other function is called
+    int fall();
+    if(fall() = 0);
+    {
+        void lockshape();
+        
+        if(lockShape() = 0)
+        {
+            void destroyLine();
+        }
+    }
+
+    
     return;
 }
 
