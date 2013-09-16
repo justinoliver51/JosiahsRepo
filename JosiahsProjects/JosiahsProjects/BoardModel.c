@@ -35,7 +35,7 @@ unsigned int yLen;
 //declarations
 int fall();
 void destroyLine();
-void lockShape();
+char lockShape();
 void updateBoard();
 
 // ******** intializeBoardModel **********
@@ -86,41 +86,50 @@ int fall()
 }
 
 // ******** destroyLine **********
-// makes shapes fall down the board 1 space
+// Temoves a line of blocks if they are all filled
 //
 // Inputs:    None
 //
-// Outputs:   0 if shape is placed correctly, 1 if not
+// Outputs:   None
 void destroyLine()
 {
+    
+    
     return;
 }
 
 // ******** lockShape **********
-// makes shapes fall down the board 1 space
+// Locks the current shape in a position it cant move from and updates the board
 //
 // Inputs:    None
 //
-// Outputs:   0 if shape is placed correctly, 1 if not
-void lockShape()
+// Outputs:   1 if a line of blocks is filled, 0 if not
+char lockShape()
 {
-    return;
+    return 0;
 }
+
+// ******** updateBoard **********
+// Called by an interrupt to update the state of the board
+//
+// Inputs:    None
+//
+// Outputs:   None
 
 void updateBoard()
 {
-    //this function is supposed to decide when each other function is called
-    int 
-    int fellIncorrectly = fall();
+    int fallFinished = fall();
+    int lineFilled;
     
-    // If 
-    if(fellIncorrectly)
+    // this checks if the shape has reached the bottom of its decent
+    if(fallFinished)
     {
-        lockShape();
+        lineFilled = lockShape();
         
-        if(lockShape() == 0)
+        // this checks if there is a full line of blocks needing to be removed
+        if (lineFilled == 1)
         {
-            void destroyLine();
+            destroyLine();
         }
     }
 

@@ -22,7 +22,7 @@ typedef struct
     void (* destroyLine)();
     
     //prevents user from being able to rotate the shape
-    void (* lockShape)();
+    char (* lockShape)();
     
     //called by an interrupt when its time to update the state of the board
     void (* updateBoard)();
