@@ -37,6 +37,6 @@ typedef struct
 //
 // Outputs:   None
 
-BoardModelPtr initializeBoardModel();
+BoardModelPtr initializeBoardModel(unsigned int xLen, unsigned int yLen);
 
 #endif

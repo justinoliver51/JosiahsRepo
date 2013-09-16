@@ -26,7 +26,7 @@ ShapeModelPtr fallingShapePtr;
 
 unsigned int fallSpeed;
 
-unsigned int *board;
+unsigned int **board;
 
 unsigned int xLen;
 
@@ -45,15 +45,28 @@ void updateBoard();
 //
 // Outputs:   None
 
-BoardModelPtr initializeBoardModel()
+BoardModelPtr initializeBoardModel(unsigned int newXLen, unsigned int newYLen)
 {
+    // Local Variables
+    int x, y;
+    
     // INITIALIZE GLOBALS
-    // Our initial board is 0
-    board = 0;
+    xLen = newXLen;
+    yLen = newYLen;
+    board = (unsigned int**) malloc(xLen * sizeof(int*));
+    
+    for (x = 0; x < xLen; x++) {
+        // (0,0), (0,1), (0,2), ...
+        board[x] = (unsigned int*) malloc(yLen * sizeof(int));
+    }
+    
+    // Initialize all values to zero
+    for(x = 0; x < xLen; x = x + 1)
+        for(y = 0; y < yLen; y = y + 1)
+            board[x][y] = 0;
     
     // Initialize the struct that represents our BoardBoard
     BoardModelPtr boardModelPtr = (BoardModelPtr) malloc(sizeof( BoardModel ) );  // Allocates memory for the boardboard
-    
     
     boardModelPtr->updateBoard = &updateBoard;
     boardModelPtr->lockShape = &lockShape;
@@ -138,9 +151,9 @@ void updateBoard()
 }
 
 
-
-
-
-
-
-
+/*
+ for (int i = 0; i < dimension1_max; i++) {
+ free(x[i]);
+ }
+ free(x);
+ */
