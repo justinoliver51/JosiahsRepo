@@ -26,6 +26,7 @@ ShapeModelPtr fallingShapePtr;
 
 unsigned int fallSpeed;
 
+// All numbers besides 0 contain blocks
 unsigned int **board;
 
 unsigned int xLen;
@@ -85,17 +86,30 @@ BoardModelPtr initializeBoardModel(unsigned int newXLen, unsigned int newYLen)
 // Outputs:   0 if shape is placed correctly, 1 if not
 int fall()
 {
+    int i = 0;
+    Location positionArray[4];
+    
+    fallingShapePtr->getPositionArray(positionArray);
+    
     // Shifts the shape down one block on the board
     fallingShapePtr->move(0, -1);
-    
+
+    //i need a loop and i need to check every block in the shape for their location in the board to determine if its empty, if it is empty go to the next block, if not fall
+    // if we reach the bottom
     // If the shape can be placed, return 0
-    if(1)
+    for(i = 0; i < 4; i++)
     {
-        return 0;
+        // positionarray[i] is a location
+        //the locatio.x gives you the x coordinate, same for the location.y
+        if(board[positionArray[i].x][positionArray[i].y] > 0)
+        {
+            fallingShapePtr->move(0, 1);
+            
+            return 1;
+        }
     }
-    // Otherwise return 1
-    else
-        return 1;
+    
+    return 0;
 }
 
 // ******** destroyLine **********
@@ -119,6 +133,21 @@ void destroyLine()
 // Outputs:   1 if a line of blocks is filled, 0 if not
 char lockShape()
 {
+    int i;
+    Location positionArray[4];
+    
+    fallingShapePtr->getPositionArray(positionArray);
+    
+    //the shape is supposed to be locked in position
+    //i need another loop to go through each block and set the value of the board at the coordinates to 1
+    
+    for(i = 0; i < 4; i++)
+    {
+        // positionarray[i] is a location
+        //the location.x gives you the x coordinate, same for the location.y
+        
+        board[positionArray[i].x][positionArray[i].y] = 1;
+
     return 0;
 }
 
