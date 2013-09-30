@@ -121,6 +121,7 @@ int fall()
 void destroyLine()
 {
     
+    //i need to reset the values of the line to 0 and then shift the blocks down
     
     return;
 }
@@ -133,7 +134,8 @@ void destroyLine()
 // Outputs:   1 if a line of blocks is filled, 0 if not
 char lockShape()
 {
-    int i;
+    int i,j;
+    
     Location positionArray[4];
     
     fallingShapePtr->getPositionArray(positionArray);
@@ -146,8 +148,26 @@ char lockShape()
         // positionarray[i] is a location
         //the location.x gives you the x coordinate, same for the location.y
         
-        board[positionArray[i].x][positionArray[i].y] = 1;
+        board[positionArray[i].x][positionArray[i].y] = 1;  //FIXME: INSTEAD OF 1, NEEDS TO REFLECT THE                        COLOR WE WANT   
+    }
 
+    //IF A BLOCKS COORDINATES IS 1, IT IS FILLED
+    for(j = 0; j < xLen; j++)
+    {
+        for(i = 0; i < yLen; i++)
+        {
+            if(board[i][j] == 0)
+            {
+                break;
+            }
+        }
+    
+        if(i == yLen)
+        {
+            return 1;
+        }
+    }
+    
     return 0;
 }
 
@@ -186,3 +206,5 @@ void updateBoard()
  }
  free(x);
  */
+    
+    
