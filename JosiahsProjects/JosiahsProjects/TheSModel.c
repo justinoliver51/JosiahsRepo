@@ -22,7 +22,7 @@ void getSPositionArray(LocationPtr);
 // PRIVATE VARIABSES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BSOCKS];
-static ShapeModelPtr shapePtr;
+static SModelPtr sPtr;
 
 SModelPtr initializeTheSModel()
 {
@@ -30,13 +30,13 @@ SModelPtr initializeTheSModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    SModelPtr lPtr = (SModelPtr) malloc(sizeof( TheSModel ) );  // Allocates memory for TheS
+    sPtr = (SModelPtr) malloc(sizeof( TheSModel ) );  // Allocates memory for TheS
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateS;
-    shapePtr->move = &moveS;
-    lPtr->free = &freeSModel;
-    shapePtr->getPositionArray = &getSPositionArray;
+    sPtr->shapePtr = initializeShapeModel();
+    sPtr->shapePtr->rotate = &rotateS;
+    sPtr->shapePtr->move = &moveS;
+    sPtr->free = &freeSModel;
+    sPtr->shapePtr->getPositionArray = &getSPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -49,7 +49,7 @@ SModelPtr initializeTheSModel()
     positionArray[3].x = 2;
     positionArray[3].y = 1;
     
-    return lPtr;
+    return sPtr;
 }
 
 // this functions translates the S shape to the coordinate (x,y)
@@ -71,9 +71,8 @@ void moveS(int x, int y)
 // There are two positions for a S, vertical or horizontal.
 void rotateS()
 {
-    if(shapePtr->getState() == 0)
+    if(sPtr->shapePtr->getState() == 0)
     {
-        
         positionArray[0].x = positionArray[0].x + 1;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x - 1;
@@ -83,12 +82,11 @@ void rotateS()
         positionArray[3].x = positionArray[3].x - 2;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(1);
+        sPtr->shapePtr->setState(1);
     }
     
     else
     {
-        
         positionArray[0].x = positionArray[0].x - 1;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x + 1;
@@ -98,7 +96,7 @@ void rotateS()
         positionArray[3].x = positionArray[3].x + 2;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(0);
+        sPtr->shapePtr->setState(0);
     }
     
     return;
@@ -110,12 +108,11 @@ void rotateS()
 
 // Frees the allocated memory of the Score Model
 
-void freeSModel(void *lModel)
+void freeSModel(void *sModel)
 {
-    
-    SModelPtr lModelPtr = (SModelPtr) lModel;
-    shapePtr->free(shapePtr);
-    free(lModelPtr);
+    SModelPtr sModelPtr = (SModelPtr) sModel;
+    sModelPtr->shapePtr->free(sModelPtr->shapePtr);
+    free(sModelPtr);
 }
 
 // Returns a copy of the positionArray

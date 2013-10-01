@@ -22,7 +22,7 @@ void getZPositionArray(LocationPtr);
 // PRIVATE VARIABZES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BZOCKS];
-static ShapeModelPtr shapePtr;
+static ZModelPtr zPtr;
 
 ZModelPtr initializeTheZModel()
 {
@@ -30,13 +30,13 @@ ZModelPtr initializeTheZModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    ZModelPtr lPtr = (ZModelPtr) malloc(sizeof( TheZModel ) );  // Allocates memory for TheZ
+    zPtr = (ZModelPtr) malloc(sizeof( TheZModel ) );  // Allocates memory for TheZ
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateZ;
-    shapePtr->move = &moveZ;
-    lPtr->free = &freeZModel;
-    shapePtr->getPositionArray = &getZPositionArray;
+    zPtr->shapePtr = initializeShapeModel();
+    zPtr->shapePtr->rotate = &rotateZ;
+    zPtr->shapePtr->move = &moveZ;
+    zPtr->free = &freeZModel;
+    zPtr->shapePtr->getPositionArray = &getZPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -49,7 +49,7 @@ ZModelPtr initializeTheZModel()
     positionArray[3].x = 0;
     positionArray[3].y = 1;
     
-    return lPtr;
+    return zPtr;
 }
 
 // this functions translates the Z shape to the coordinate (x,y)
@@ -71,9 +71,8 @@ void moveZ(int x, int y)
 // There are two positions for a Z, vertical or horizontal.
 void rotateZ()
 {
-    if(shapePtr->getState() == 0)
+    if(zPtr->shapePtr->getState() == 0)
     {
-        
         positionArray[0].x = positionArray[0].x - 1;
         positionArray[0].y = positionArray[0].y + 1;
         positionArray[1].x = positionArray[1].x;
@@ -83,12 +82,11 @@ void rotateZ()
         positionArray[3].x = positionArray[3].x + 2;
         positionArray[3].y = positionArray[3].y + 1;
         
-        shapePtr->setState(1);
+        zPtr->shapePtr->setState(1);
     }
     
      else
     {
-        
         positionArray[0].x = positionArray[0].x + 1;
         positionArray[0].y = positionArray[0].y - 1;
         positionArray[1].x = positionArray[1].x;
@@ -98,7 +96,7 @@ void rotateZ()
         positionArray[3].x = positionArray[3].x - 2;
         positionArray[3].y = positionArray[3].y - 1;
         
-        shapePtr->setState(0);
+        zPtr->shapePtr->setState(0);
     }
     
     return;
@@ -110,12 +108,11 @@ void rotateZ()
 
 // Frees the allocated memory of the Score Model
 
-void freeZModel(void *lModel)
+void freeZModel(void *zModel)
 {
-    
-    ZModelPtr lModelPtr = (ZModelPtr) lModel;
-    shapePtr->free(shapePtr);
-    free(lModelPtr);
+    ZModelPtr zModelPtr = (ZModelPtr) zModel;
+    zModelPtr->shapePtr->free(zModelPtr->shapePtr);
+    free(zModelPtr);
 }
 
 // Returns a copy of the positionArray

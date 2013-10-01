@@ -45,7 +45,6 @@ unsigned int getColor()
     return color;
 }
 
-
 // Setter for color
 
 

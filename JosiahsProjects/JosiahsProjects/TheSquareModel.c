@@ -22,7 +22,7 @@ void getSquarePositionArray(LocationPtr);
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BLOCKS];
-static ShapeModelPtr shapePtr;
+static SquareModelPtr squarePtr;
 
 SquareModelPtr initializeTheSquareModel()
 {
@@ -30,23 +30,24 @@ SquareModelPtr initializeTheSquareModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    SquareModelPtr squarePtr = (SquareModelPtr) malloc(sizeof( TheSquareModel ) );  // Allocates memory for Thesquare
+    squarePtr = (SquareModelPtr) malloc(sizeof( TheSquareModel ) );  // Allocates memory for Thesquare
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateSquare;
-    shapePtr->move = &moveSquare;
+    squarePtr->shapePtr = initializeShapeModel();
+    squarePtr->shapePtr->rotate = &rotateSquare;
+    squarePtr->shapePtr->move = &moveSquare;
     squarePtr->free = &freeSquareModel;
-    shapePtr->getPositionArray = &getSquarePositionArray;
+    squarePtr->shapePtr->getPositionArray = &getSquarePositionArray;
+    
     
     // Initialize
-    positionArray[0].x = 3;
+    positionArray[0].x = 0;
     positionArray[0].y = 0;
-    positionArray[1].x = 3;
+    positionArray[1].x = 0;
     positionArray[1].y = 1;
-    positionArray[2].x = 3;
-    positionArray[2].y = 2;
-    positionArray[3].x = 3;
-    positionArray[3].y = 3;
+    positionArray[2].x = 1;
+    positionArray[2].y = 0;
+    positionArray[3].x = 1;
+    positionArray[3].y = 1;
     
     return squarePtr;
 }
@@ -70,7 +71,7 @@ void moveSquare(int x, int y)
 // There are two positions for a square, vertical or horizontal.
 void rotateSquare()
 {
-    shapePtr->setState(0);    
+    squarePtr->shapePtr->setState(0);
     
     return;
 }
@@ -83,9 +84,8 @@ void rotateSquare()
 
 void freeSquareModel(void *squareModel)
 {
-    
     SquareModelPtr squareModelPtr = (SquareModelPtr) squareModel;
-    shapePtr->free(shapePtr);
+    squareModelPtr->shapePtr->free(squareModelPtr->shapePtr);
     free(squareModelPtr);
 }
 

@@ -19,6 +19,9 @@ typedef struct
     void (* free)(void *);
 } TheBackwardsLModel, *BackwardsLModelPtr;
 
+// Initialize the T Model
+BackwardsLModelPtr initializeTheBackwardsLModel();
+
 /*
  State 0
      y

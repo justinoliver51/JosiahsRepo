@@ -22,7 +22,7 @@ void getStickPositionArray(LocationPtr);
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BLOCKS];
-static ShapeModelPtr shapePtr;
+static StickModelPtr stickPtr;
 
 StickModelPtr initializeTheStickModel()
 {
@@ -30,13 +30,13 @@ StickModelPtr initializeTheStickModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    StickModelPtr stickPtr = (StickModelPtr) malloc(sizeof( TheStickModel ) );  // Allocates memory for TheStick
+    stickPtr = (StickModelPtr) malloc(sizeof( TheStickModel ) );  // Allocates memory for TheStick
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateStick;
-    shapePtr->move = &moveStick;
+    stickPtr->shapePtr = initializeShapeModel();
+    stickPtr->shapePtr->rotate = &rotateStick;
+    stickPtr->shapePtr->move = &moveStick;
     stickPtr->free = &freeStickModel;
-    shapePtr->getPositionArray = &getStickPositionArray;
+    stickPtr->shapePtr->getPositionArray = &getStickPositionArray;
     
     // Initialize
     positionArray[0].x = 3;
@@ -69,9 +69,8 @@ void moveStick(int x, int y)
 // There are two positions for a stick, vertical or horizontal.
 void rotateStick()
 {
-    if(shapePtr->getState() == 0)
+    if(stickPtr->shapePtr->getState() == 0)
     {
-        
         positionArray[0].x = positionArray[0].x - 3;
         positionArray[0].y = positionArray[0].y - 0;
         positionArray[1].x = positionArray[1].x - 3;
@@ -81,13 +80,11 @@ void rotateStick()
         positionArray[3].x = positionArray[3].x - 3;
         positionArray[3].y = positionArray[3].y - 3;
         
-        shapePtr->setState(1);
+        stickPtr->shapePtr->setState(1);
     }
     
-    if(shapePtr->getState() == 1)
+    if(stickPtr->shapePtr->getState() == 1)
     {
-        
-        
         positionArray[0].x = positionArray[0].x + 3;
         positionArray[0].y = positionArray[0].y + 0;
         positionArray[1].x = positionArray[1].x + 3;
@@ -97,10 +94,8 @@ void rotateStick()
         positionArray[3].x = positionArray[3].x + 3;
         positionArray[3].y = positionArray[3].y + 3;
         
-        shapePtr->setState(0);
+        stickPtr->shapePtr->setState(0);
     }
-    
-    
     
     return;
 }
@@ -108,9 +103,8 @@ void rotateStick()
 // Frees the allocated memory of the Score Model
 void freeStickModel(void *stickModel)
 {
-    
     StickModelPtr stickModelPtr = (StickModelPtr) stickModel;
-    shapePtr->free(shapePtr);
+    stickModelPtr->shapePtr->free(stickModelPtr->shapePtr);
     free(stickModelPtr);
 }
 

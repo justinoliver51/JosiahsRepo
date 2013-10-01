@@ -8,7 +8,6 @@
 
 #include <stdio.h>
 #include "BoardModel.h"
-#include "ShapeModel.h"
 
 
 /*
@@ -33,11 +32,12 @@ unsigned int xLen;
 
 unsigned int yLen;
 
-//declarations
+// Function Declarations
 int fall();
 void destroyLine();
 char lockShape();
 void updateBoard();
+void setFallingShape(ShapeModelPtr);
 
 // ******** intializeBoardModel **********
 // This initializes our boardModel.
@@ -54,7 +54,7 @@ BoardModelPtr initializeBoardModel(unsigned int newXLen, unsigned int newYLen)
     // INITIALIZE GLOBALS
     xLen = newXLen;
     yLen = newYLen;
-    board = (unsigned int**) malloc(xLen * sizeof(int*));
+    board = (unsigned int**) malloc(xLen * sizeof(int *));
     
     for (x = 0; x < xLen; x++) {
         // (0,0), (0,1), (0,2), ...
@@ -73,6 +73,7 @@ BoardModelPtr initializeBoardModel(unsigned int newXLen, unsigned int newYLen)
     boardModelPtr->lockShape = &lockShape;
     boardModelPtr->destroyLine = &destroyLine;
     boardModelPtr->fall = &fall;
+    boardModelPtr->setFallingShape = &setFallingShape;
     
     
     return boardModelPtr;
@@ -88,20 +89,27 @@ int fall()
 {
     int i = 0;
     Location positionArray[4];
-    
     fallingShapePtr->getPositionArray(positionArray);
     
     // Shifts the shape down one block on the board
     fallingShapePtr->move(0, -1);
+    fallingShapePtr->getPositionArray(positionArray);
 
     //i need a loop and i need to check every block in the shape for their location in the board to determine if its empty, if it is empty go to the next block, if not fall
     // if we reach the bottom
     // If the shape can be placed, return 0
     for(i = 0; i < 4; i++)
     {
+        // Check if the y coordinate in the position array is legal  FIXME: Need to leave for Josiah.
+        if(positionArray[i].y > (yLen + NUMBER_OF_BLOCKS))
+        {
+            fallingShapePtr->move(0, 1);
+            return 1;
+        }
+        
         // positionarray[i] is a location
-        //the locatio.x gives you the x coordinate, same for the location.y
-        if(board[positionArray[i].x][positionArray[i].y] > 0)
+        //the locatio.x gives you the x coordinate, same for the location.y    FIXME: Need to leave for Josiah
+        if( (board[positionArray[i].x][positionArray[i].y] > 0) && (positionArray[i].y < yLen) )
         {
             fallingShapePtr->move(0, 1);
             
@@ -110,6 +118,20 @@ int fall()
     }
     
     return 0;
+}
+
+// ******** setFallingShape **********
+// Our setter for the falling shape
+//
+// Inputs:    A pointer to the falling shape
+//
+// Outputs:   None
+void setFallingShape(ShapeModelPtr newFallingShapePtr)
+{
+    
+    fallingShapePtr = newFallingShapePtr;
+    
+    return;
 }
 
 // ******** destroyLine **********

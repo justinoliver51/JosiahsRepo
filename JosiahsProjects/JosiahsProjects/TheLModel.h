@@ -19,6 +19,9 @@ typedef struct
     void (* free)(void *);
 } TheLModel, *LModelPtr;
 
+// Initialize the L Model
+LModelPtr initializeTheLModel();
+
 /*
  State 0
      y

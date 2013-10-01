@@ -10,6 +10,8 @@
 #ifndef JosiahsProjects_Board_h
 #define JosiahsProjects_Board_h
 
+#include "ShapeModel.h"
+
 // The BoardModel is responsible for understanding everything that occurs on the board
 
 
@@ -26,6 +28,9 @@ typedef struct
     
     //called by an interrupt when its time to update the state of the board
     void (* updateBoard)();
+    
+    // Setter for the falling shape
+    void (* setFallingShape)(ShapeModelPtr);
     
 } BoardModel, *BoardModelPtr;
 

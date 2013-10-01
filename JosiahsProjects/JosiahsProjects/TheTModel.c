@@ -22,7 +22,7 @@ void getTPositionArray(LocationPtr);
 // PRIVATE VARIABTES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BTOCKS];
-static ShapeModelPtr shapePtr;
+static TModelPtr tPtr;
 
 TModelPtr initializeTModel()
 {
@@ -30,13 +30,13 @@ TModelPtr initializeTModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    TModelPtr lPtr = (TModelPtr) malloc(sizeof( TModel ) );  // Allocates memory for T
+    tPtr = (TModelPtr) malloc(sizeof( TModel ) );  // Allocates memory for T
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateT;
-    shapePtr->move = &moveT;
-    lPtr->free = &freeTModel;
-    shapePtr->getPositionArray = &getTPositionArray;
+    tPtr->shapePtr = initializeShapeModel();
+    tPtr->shapePtr->rotate = &rotateT;
+    tPtr->shapePtr->move = &moveT;
+    tPtr->free = &freeTModel;
+    tPtr->shapePtr->getPositionArray = &getTPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -49,7 +49,7 @@ TModelPtr initializeTModel()
     positionArray[3].x = 1;
     positionArray[3].y = 2;
     
-    return lPtr;
+    return tPtr;
 }
 
 // this functions translates the T shape to the coordinate (x,y)
@@ -71,9 +71,8 @@ void moveT(int x, int y)
 // There are two positions for a T, vertical or horizontal.
 void rotateT()
 {
-    if(shapePtr->getState() == 0)
+    if(tPtr->shapePtr->getState() == 0)
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x;
@@ -83,12 +82,11 @@ void rotateT()
         positionArray[3].x = positionArray[3].x;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(1);
+        tPtr->shapePtr->setState(1);
     }
     
-    else if(shapePtr->getState() == 1)
+    else if(tPtr->shapePtr->getState() == 1)
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x;
@@ -98,12 +96,11 @@ void rotateT()
         positionArray[3].x = positionArray[3].x - 1;
         positionArray[3].y = positionArray[3].y - 1;
         
-        shapePtr->setState(2);
+        tPtr->shapePtr->setState(2);
     }
     
-    else if(shapePtr->getState() == 2)
+    else if(tPtr->shapePtr->getState() == 2)
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x - 1;
@@ -113,12 +110,11 @@ void rotateT()
         positionArray[3].x = positionArray[3].x;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(3);
+        tPtr->shapePtr->setState(3);
     }
     
     else
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x + 1;
@@ -128,7 +124,7 @@ void rotateT()
         positionArray[3].x = positionArray[3].x - 1;
         positionArray[3].y = positionArray[3].y + 1;
         
-        shapePtr->setState(0);
+        tPtr->shapePtr->setState(0);
     }
     
     return;
@@ -140,12 +136,11 @@ void rotateT()
 
 // Frees the allocated memory of the Score Model
 
-void freeTModel(void *lModel)
+void freeTModel(void *tModel)
 {
-    
-    TModelPtr lModelPtr = (TModelPtr) lModel;
-    shapePtr->free(shapePtr);
-    free(lModelPtr);
+    TModelPtr tModelPtr = (TModelPtr) tModel;
+    tModelPtr->shapePtr->free(tModelPtr->shapePtr);
+    free(tModelPtr);
 }
 
 // Returns a copy of the positionArray

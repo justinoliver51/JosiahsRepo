@@ -22,7 +22,7 @@ void getLPositionArray(LocationPtr);
 // PRIVATE VARIABLES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BLOCKS];
-static ShapeModelPtr shapePtr;
+static LModelPtr lPtr;
 
 LModelPtr initializeTheLModel()
 {
@@ -30,13 +30,13 @@ LModelPtr initializeTheLModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    LModelPtr lPtr = (LModelPtr) malloc(sizeof( TheLModel ) );  // Allocates memory for TheL
+    lPtr = (LModelPtr) malloc(sizeof( TheLModel ) );  // Allocates memory for TheL
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateL;
-    shapePtr->move = &moveL;
+    lPtr->shapePtr = initializeShapeModel();
+    lPtr->shapePtr->rotate = &rotateL;
+    lPtr->shapePtr->move = &moveL;
     lPtr->free = &freeLModel;
-    shapePtr->getPositionArray = &getLPositionArray;
+    lPtr->shapePtr->getPositionArray = &getLPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -71,9 +71,8 @@ void moveL(int x, int y)
 // There are two positions for a L, vertical or horizontal.
 void rotateL()
 {
-    if(shapePtr->getState() == 0)
+    if(lPtr->shapePtr->getState() == 0)
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x + 1;
@@ -83,12 +82,11 @@ void rotateL()
         positionArray[3].x = positionArray[3].x + 1;
         positionArray[3].y = positionArray[3].y - 1;
         
-        shapePtr->setState(1);
+        lPtr->shapePtr->setState(1);
     }
     
-    else if(shapePtr->getState() == 1)
+    else if(lPtr->shapePtr->getState() == 1)
     {
-        
         positionArray[0].x = positionArray[0].x + 1;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x - 2;
@@ -98,12 +96,11 @@ void rotateL()
         positionArray[3].x = positionArray[3].x;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(2);
+        lPtr->shapePtr->setState(2);
     }
     
-    else if(shapePtr->getState() == 2)
+    else if(lPtr->shapePtr->getState() == 2)
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x + 2;
@@ -113,12 +110,11 @@ void rotateL()
         positionArray[3].x = positionArray[3].x + 1;
         positionArray[3].y = positionArray[3].y - 1;
         
-        shapePtr->setState(3);
+        lPtr->shapePtr->setState(3);
     }
     
     else 
     {
-        
         positionArray[0].x = positionArray[0].x - 1;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x - 1;
@@ -128,7 +124,7 @@ void rotateL()
         positionArray[3].x = positionArray[3].x - 2;
         positionArray[3].y = positionArray[3].y + 2;
         
-        shapePtr->setState(0);
+        lPtr->shapePtr->setState(0);
     }
     
     return;
@@ -142,9 +138,8 @@ void rotateL()
 
 void freeLModel(void *lModel)
 {
-    
     LModelPtr lModelPtr = (LModelPtr) lModel;
-    shapePtr->free(shapePtr);
+    lModelPtr->shapePtr->free(lModelPtr->shapePtr);
     free(lModelPtr);
 }
 

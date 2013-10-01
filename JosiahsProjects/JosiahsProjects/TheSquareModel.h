@@ -19,6 +19,9 @@ typedef struct
     void (* free)(void *);
 } TheSquareModel, *SquareModelPtr;
 
+// Initialize the Square Model
+SquareModelPtr initializeTheSquareModel();
+
 /*
  
 

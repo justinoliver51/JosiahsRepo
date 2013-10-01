@@ -19,6 +19,9 @@ typedef struct
     void (* free)(void *);
 } TheStickModel, *StickModelPtr;
 
+// Initialize the T Model
+StickModelPtr initializeTheStickModel();
+
 /*
  
  State 0

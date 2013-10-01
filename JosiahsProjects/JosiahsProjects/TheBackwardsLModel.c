@@ -22,7 +22,7 @@ void getBackwardsLPositionArray(LocationPtr);
 // PRIVATE VARIABBackwardsLES
 // this is the array containing the locations for each of our blocks
 static Location positionArray[NUMBER_OF_BBackwardsLOCKS];
-static ShapeModelPtr shapePtr;
+static BackwardsLModelPtr backwardsLPtr;
 
 BackwardsLModelPtr initializeTheBackwardsLModel()
 {
@@ -30,13 +30,13 @@ BackwardsLModelPtr initializeTheBackwardsLModel()
     // Our initial score is 0
     
     // Initialize the struct that represents our ScoreBoard
-    BackwardsLModelPtr lPtr = (BackwardsLModelPtr) malloc(sizeof( TheBackwardsLModel ) );  // Allocates memory for TheBackwardsL
+    backwardsLPtr = (BackwardsLModelPtr) malloc(sizeof( TheBackwardsLModel ) );  // Allocates memory for TheBackwardsL
     
-    shapePtr = initializeShapeModel();
-    shapePtr->rotate = &rotateBackwardsL;
-    shapePtr->move = &moveBackwardsL;
-    lPtr->free = &freeBackwardsLModel;
-    shapePtr->getPositionArray = &getBackwardsLPositionArray;
+    backwardsLPtr->shapePtr = initializeShapeModel();
+    backwardsLPtr->shapePtr->rotate = &rotateBackwardsL;
+    backwardsLPtr->shapePtr->move = &moveBackwardsL;
+    backwardsLPtr->free = &freeBackwardsLModel;
+    backwardsLPtr->shapePtr->getPositionArray = &getBackwardsLPositionArray;
     
     // Initialize the shape
     // The board will initialize the offsets
@@ -49,7 +49,7 @@ BackwardsLModelPtr initializeTheBackwardsLModel()
     positionArray[3].x = 2;
     positionArray[3].y = 2;
     
-    return lPtr;
+    return backwardsLPtr;
 }
 
 // this functions translates the BackwardsL shape to the coordinate (x,y)
@@ -71,9 +71,8 @@ void moveBackwardsL(int x, int y)
 // There are two positions for a BackwardsL, vertical or horizontal.
 void rotateBackwardsL()
 {
-    if(shapePtr->getState() == 0)
+    if(backwardsLPtr->shapePtr->getState() == 0)
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y;
         positionArray[1].x = positionArray[1].x;
@@ -83,12 +82,11 @@ void rotateBackwardsL()
         positionArray[3].x = positionArray[3].x - 2;
         positionArray[3].y = positionArray[3].y - 2;
         
-        shapePtr->setState(1);
+        backwardsLPtr->shapePtr->setState(1);
     }
     
-    else if(shapePtr->getState() == 1)
+    else if(backwardsLPtr->shapePtr->getState() == 1)
     {
-        
         positionArray[0].x = positionArray[0].x - 1;
         positionArray[0].y = positionArray[0].y + 2;
         positionArray[1].x = positionArray[1].x - 1;
@@ -98,12 +96,11 @@ void rotateBackwardsL()
         positionArray[3].x = positionArray[3].x;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(2);
+        backwardsLPtr->shapePtr->setState(2);
     }
     
-    else if(shapePtr->getState() == 2)
+    else if(backwardsLPtr->shapePtr->getState() == 2)
     {
-        
         positionArray[0].x = positionArray[0].x + 1;
         positionArray[0].y = positionArray[0].y - 1;
         positionArray[1].x = positionArray[1].x + 1;
@@ -113,12 +110,11 @@ void rotateBackwardsL()
         positionArray[3].x = positionArray[3].x;
         positionArray[3].y = positionArray[3].y;
         
-        shapePtr->setState(3);
+        backwardsLPtr->shapePtr->setState(3);
     }
     
     else
     {
-        
         positionArray[0].x = positionArray[0].x;
         positionArray[0].y = positionArray[0].y - 1;
         positionArray[1].x = positionArray[1].x;
@@ -128,7 +124,7 @@ void rotateBackwardsL()
         positionArray[3].x = positionArray[3].x + 2;
         positionArray[3].y = positionArray[3].y + 2;
         
-        shapePtr->setState(0);
+        backwardsLPtr->shapePtr->setState(0);
     }
     
     return;
@@ -140,12 +136,11 @@ void rotateBackwardsL()
 
 // Frees the allocated memory of the Score Model
 
-void freeBackwardsLModel(void *lModel)
+void freeBackwardsLModel(void *backwardsLModel)
 {
-    
-    BackwardsLModelPtr lModelPtr = (BackwardsLModelPtr) lModel;
-    shapePtr->free(shapePtr);
-    free(lModelPtr);
+    BackwardsLModelPtr backwardsLModelPtr = (BackwardsLModelPtr) backwardsLModel;
+    backwardsLModelPtr->shapePtr->free(backwardsLModelPtr->shapePtr);
+    free(backwardsLModelPtr);
 }
 
 // Returns a copy of the positionArray

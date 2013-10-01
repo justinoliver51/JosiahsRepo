@@ -10,9 +10,13 @@
 #include "testz.h"
 #include "ScoreModel.h"
 #include "OpenGL.h"
-
+#include "BoardModel.h"
+#include "TheLModel.h"
+#include "TheSquareModel.h"
+#include "TheSModel.h"
 
 // Function Declarations
+void testBoardModel();
 void testScoreModel();
 void scanfExample();
 
@@ -20,11 +24,34 @@ void scanfExample();
 int main(int argc, const char * argv[])
 {
     // Display our game
-    openGLInit(argc, argv);
+    //openGLInit(argc, argv);
+    
+    testBoardModel();
     
     return 0;
 }
 
+void testBoardModel()
+{
+    unsigned int i, j, xLen = 11, yLen = 10;
+    
+    BoardModelPtr boardModelPtr = initializeBoardModel(xLen, yLen);
+    
+    for(i = 0, j = 1; i < yLen * 2; i++)
+    {
+        if(i % xLen == 0)
+        {
+            SModelPtr lPtr = initializeTheSModel();
+            lPtr->shapePtr->move(xLen/2, yLen);
+            boardModelPtr->setFallingShape(lPtr->shapePtr);  // FIXME: This should be done within updateBoard().  Gets from Preview.
+        }
+        
+        boardModelPtr->updateBoard();
+    }
+    
+    
+    return;
+}
 
 void testScoreModel()
 {
@@ -67,3 +94,6 @@ void scanfExample()
     
     return;
 }
+
+// Debug tricks
+// p *(*(board + 5) + 0) ===> How to view the coordinate, (5,0)

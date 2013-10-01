@@ -19,6 +19,9 @@ typedef struct
     void (* free)(void *);
 } TheZModel, *ZModelPtr;
 
+// Initialize the Z Model
+ZModelPtr initializeTheZModel();
+
 /*
  State 0
      y
