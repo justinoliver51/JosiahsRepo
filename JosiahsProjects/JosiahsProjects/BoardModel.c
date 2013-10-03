@@ -144,8 +144,22 @@ void destroyLine()
 {
     
     //i need to reset the values of the line to 0 and then shift the blocks down
+    int i,j;
     
-    return;
+    
+    for(i = 0; i < xLen; i++)
+    {
+        board[i][0] = 0;
+    }
+    
+    for(i = 0; i < xLen; i++)
+    {
+        for( j = 0; j < yLen; j++)
+        {
+            board[i][j - 1];
+        }
+    }
+    
 }
 
 // ******** lockShape **********
