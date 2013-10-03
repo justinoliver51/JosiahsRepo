@@ -37,13 +37,17 @@ void testBoardModel()
     
     BoardModelPtr boardModelPtr = initializeBoardModel(xLen, yLen);
     
-    for(i = 0, j = 1; i < yLen * 2; i++)
+    for(i = 0, j = 0; i < yLen * 100; i++)
     {
         if(i % xLen == 0)
         {
-            SModelPtr lPtr = initializeTheSModel();
-            lPtr->shapePtr->move(xLen/2, yLen);
-            boardModelPtr->setFallingShape(lPtr->shapePtr);  // FIXME: This should be done within updateBoard().  Gets from Preview.
+            SquareModelPtr squarePtr = initializeTheSquareModel();
+            squarePtr->shapePtr->move(j, yLen);
+            boardModelPtr->setFallingShape(squarePtr->shapePtr);  // FIXME: This should be done within updateBoard().  Gets from Preview.
+            j = j + 2;     // Moves the square 2 spaces to the right
+            
+            if(j == 10)
+                j = 0;
         }
         
         boardModelPtr->updateBoard();

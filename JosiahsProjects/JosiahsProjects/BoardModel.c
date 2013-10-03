@@ -109,7 +109,7 @@ int fall()
         
         // positionarray[i] is a location
         //the locatio.x gives you the x coordinate, same for the location.y    FIXME: Need to leave for Josiah
-        if( (board[positionArray[i].x][positionArray[i].y] > 0) && (positionArray[i].y < yLen) )
+        if( (positionArray[i].y < yLen) && (board[positionArray[i].x][positionArray[i].y] > 0) )
         {
             fallingShapePtr->move(0, 1);
             
