@@ -156,9 +156,10 @@ void destroyLine()
     {
         for( j = 0; j < yLen; j++)
         {
-            board[i][j - 1];
+            board[i][j] = board[i][j--];
         }
     }
+    
     
 }
 
