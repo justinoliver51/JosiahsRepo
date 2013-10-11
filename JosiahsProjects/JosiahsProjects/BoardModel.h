@@ -33,7 +33,7 @@ typedef struct
     void (* setFallingShape)(ShapeModelPtr);
     
     // finds the line for the destroy line function
-    int (* findLine)();
+    int (* findFilledLine)();
     
 } BoardModel, *BoardModelPtr;
 

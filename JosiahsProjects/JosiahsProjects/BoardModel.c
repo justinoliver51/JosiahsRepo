@@ -38,7 +38,7 @@ void destroyLine();
 char lockShape();
 void updateBoard();
 void setFallingShape(ShapeModelPtr);
-int findLine();
+int findFilledLine();
 
 // ******** intializeBoardModel **********
 // This initializes our boardModel.
@@ -135,14 +135,14 @@ void setFallingShape(ShapeModelPtr newFallingShapePtr)
     return;
 }
 
-// ******** findLine **********
+// ******** findFilledLine **********
 // Checks coordinates to find "line"
 //
 // Inputs:    i,j
 //
 // Outputs:   line
 
-int findLine()
+int findFilledLine()
 {
     int i,j;
     
@@ -177,7 +177,7 @@ void destroyLine()
     //i need to reset the values of the line to 0 and then shift the blocks down
     int i,j,line= 0;
     
-    line = findLine();
+    line = findFilledLine();
     
     for(i = 0; i < xLen; i++)
     {
@@ -226,7 +226,7 @@ char lockShape()
     }
 
     //IF A BLOCKS COORDINATES IS 1, IT IS FILLED
-    return findLine();
+    return findFilledLine();
     
 }
 
