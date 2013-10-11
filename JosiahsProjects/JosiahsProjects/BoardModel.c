@@ -38,6 +38,7 @@ void destroyLine();
 char lockShape();
 void updateBoard();
 void setFallingShape(ShapeModelPtr);
+int findLine();
 
 // ******** intializeBoardModel **********
 // This initializes our boardModel.
@@ -134,6 +135,36 @@ void setFallingShape(ShapeModelPtr newFallingShapePtr)
     return;
 }
 
+// ******** findLine **********
+// Checks coordinates to find "line"
+//
+// Inputs:    i,j
+//
+// Outputs:   line
+
+int findLine()
+{
+    int i,j;
+    
+    for(i = 0; i < yLen; i++)
+    {
+        for(j = 0; j < xLen; j++)
+        {
+            if(board[j][i] == 0)
+            {
+                break;
+            }
+        }
+        
+        if(j == xLen)
+        {
+            return j;
+        }
+    }
+
+    return 0;
+}
+    
 // ******** destroyLine **********
 // Temoves a line of blocks if they are all filled
 //
@@ -144,21 +175,27 @@ void destroyLine()
 {
     
     //i need to reset the values of the line to 0 and then shift the blocks down
-    int i,j;
+    int i,j,line= 0;
     
+    line = findLine();
     
     for(i = 0; i < xLen; i++)
     {
-        board[i][0] = 0;
+        // FIXME
+        // this needs to destroy the correct line, not line zero
+        board[i][line] = 0;
     }
     
     for(i = 0; i < xLen; i++)
     {
-        for( j = 0; j < yLen; j++)
+        for( j = line; j < yLen; j++)
         {
-            board[i][j] = board[i][j--];
+            //the variable line is my starting point, not 0
+            board[i][j] = board[i][j + 1];
         }
     }
+    
+    return;
     
     
 }
@@ -189,23 +226,8 @@ char lockShape()
     }
 
     //IF A BLOCKS COORDINATES IS 1, IT IS FILLED
-    for(j = 0; j < xLen; j++)
-    {
-        for(i = 0; i < yLen; i++)
-        {
-            if(board[i][j] == 0)
-            {
-                break;
-            }
-        }
+    return findLine();
     
-        if(i == yLen)
-        {
-            return 1;
-        }
-    }
-    
-    return 0;
 }
 
 // ******** updateBoard **********

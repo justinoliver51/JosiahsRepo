@@ -32,6 +32,9 @@ typedef struct
     // Setter for the falling shape
     void (* setFallingShape)(ShapeModelPtr);
     
+    // finds the line for the destroy line function
+    int (* findLine)();
+    
 } BoardModel, *BoardModelPtr;
 
 
