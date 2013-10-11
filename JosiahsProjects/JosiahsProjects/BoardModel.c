@@ -158,11 +158,11 @@ int findFilledLine()
         
         if(j == xLen)
         {
-            return j;
+            return i;
         }
     }
 
-    return 0;
+    return -1;
 }
     
 // ******** destroyLine **********
@@ -222,7 +222,7 @@ char lockShape()
         // positionarray[i] is a location
         //the location.x gives you the x coordinate, same for the location.y
         
-        board[positionArray[i].x][positionArray[i].y] = 1;  //FIXME: INSTEAD OF 1, NEEDS TO REFLECT THE                        COLOR WE WANT   
+        board[positionArray[i].x][positionArray[i].y] = 1;  //FIXME: INSTEAD OF 1, NEEDS TO REFLECT THE COLOR WE WANT   
     }
 
     //IF A BLOCKS COORDINATES IS 1, IT IS FILLED
@@ -245,10 +245,10 @@ void updateBoard()
     // this checks if the shape has reached the bottom of its decent
     if(fallFinished)
     {
-        lineFilled = lockShape();
+        lineFilled = lockShape(); // FIXME: Line filled should just call findFilledLine().  lockShape() should return a 1 if there is a game over
         
         // this checks if there is a full line of blocks needing to be removed
-        if (lineFilled == 1)
+        if (lineFilled >= 0)
         {
             destroyLine();
         }

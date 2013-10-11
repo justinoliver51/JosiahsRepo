@@ -41,13 +41,15 @@ void testBoardModel()
     {
         if(i % xLen == 0)
         {
+            // If we have filled the board to the right side, reset back to the left
+            if(j >= xLen)
+                j = 0;
+            
             SquareModelPtr squarePtr = initializeTheSquareModel();
             squarePtr->shapePtr->move(j, yLen);
             boardModelPtr->setFallingShape(squarePtr->shapePtr);  // FIXME: This should be done within updateBoard().  Gets from Preview.
-            j = j + 2;     // Moves the square 2 spaces to the right
             
-            if(j == xLen - 1)
-                j = 0;
+            j = j + 2;     // Moves the square 2 spaces to the right
         }
         
         boardModelPtr->updateBoard();
