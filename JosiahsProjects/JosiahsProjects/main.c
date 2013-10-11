@@ -33,7 +33,7 @@ int main(int argc, const char * argv[])
 
 void testBoardModel()
 {
-    unsigned int i, j, xLen = 11, yLen = 10;
+    unsigned int i, j, xLen = 12, yLen = 11;
     
     BoardModelPtr boardModelPtr = initializeBoardModel(xLen, yLen);
     
@@ -46,7 +46,7 @@ void testBoardModel()
             boardModelPtr->setFallingShape(squarePtr->shapePtr);  // FIXME: This should be done within updateBoard().  Gets from Preview.
             j = j + 2;     // Moves the square 2 spaces to the right
             
-            if(j == 10)
+            if(j == xLen - 1)
                 j = 0;
         }
         

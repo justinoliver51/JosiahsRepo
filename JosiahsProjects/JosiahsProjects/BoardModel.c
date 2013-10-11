@@ -208,7 +208,7 @@ void destroyLine()
 // Outputs:   1 if a line of blocks is filled, 0 if not
 char lockShape()
 {
-    int i,j;
+    int i;
     
     Location positionArray[4];
     
