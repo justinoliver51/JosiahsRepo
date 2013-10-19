@@ -21,7 +21,7 @@ typedef struct
     int (* fall)();
     
     //gets rid of a line when cubes occupy the entire line
-    void (* destroyLine)();
+    void (* destroyLines)();
     
     //prevents user from being able to rotate the shape
     char (* lockShape)();

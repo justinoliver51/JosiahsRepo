@@ -34,7 +34,7 @@ unsigned int yLen;
 
 // Function Declarations
 int fall();
-void destroyLine();
+void destroyLines();
 char lockShape();
 void updateBoard();
 void setFallingShape(ShapeModelPtr);
@@ -72,7 +72,7 @@ BoardModelPtr initializeBoardModel(unsigned int newXLen, unsigned int newYLen)
     
     boardModelPtr->updateBoard = &updateBoard;
     boardModelPtr->lockShape = &lockShape;
-    boardModelPtr->destroyLine = &destroyLine;
+    boardModelPtr->destroyLines = &destroyLines;
     boardModelPtr->fall = &fall;
     boardModelPtr->setFallingShape = &setFallingShape;
     
@@ -165,39 +165,40 @@ int findFilledLine()
     return -1;
 }
     
-// ******** destroyLine **********
+// ******** destroyLines **********
 // Temoves a line of blocks if they are all filled
 //
 // Inputs:    None
 //
 // Outputs:   None
-void destroyLine()
+void destroyLines()
 {
-    
-    //i need to reset the values of the line to 0 and then shift the blocks down
-    int i,j,line= 0;
+    int i,j,line = 0;
     
     line = findFilledLine();
     
-    for(i = 0; i < xLen; i++)
+    while(line != -1)
     {
-        // FIXME
-        // this needs to destroy the correct line, not line zero
-        board[i][line] = 0;
-    }
-    
-    for(i = 0; i < xLen; i++)
-    {
-        for( j = line; j < yLen; j++)
+        //destroys the line
+        for(i = 0; i < xLen; i++)
         {
-            //the variable line is my starting point, not 0
-            board[i][j] = board[i][j + 1];
+            board[i][line] = 0;
         }
+        
+        //this shifts the lines down
+        for(i = 0; i < xLen; i++)
+        {
+            for( j = line; j < yLen; j++)
+            {
+                //the variable line is my starting point, not 0
+                board[i][j] = board[i][j + 1];
+            }
+        }
+        //this sets line before it checks if it should exit the loop
+        line = findFilledLine();
     }
     
     return;
-    
-    
 }
 
 // ******** lockShape **********
@@ -250,7 +251,7 @@ void updateBoard()
         // this checks if there is a full line of blocks needing to be removed
         if (lineFilled >= 0)
         {
-            destroyLine();
+            destroyLines();
         }
     }
 
