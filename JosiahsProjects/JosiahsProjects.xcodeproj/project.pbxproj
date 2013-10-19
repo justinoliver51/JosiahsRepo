@@ -52,6 +52,7 @@
 		397ED0D817DFF088001387C0 /* BoardModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BoardModel.c; sourceTree = "<group>"; };
 		39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Model_View_Controller.rtf; sourceTree = "<group>"; };
 		39897B8E17CAD6AE003CA5CE /* Outline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Outline.jpg; sourceTree = "<group>"; };
+		39F35D7918120F3C0032C4A5 /* item1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = item1.bmp; sourceTree = "<group>"; };
 		CE71BE9A17D39F9500A817E4 /* TheSquareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheSquareModel.h; sourceTree = "<group>"; };
 		CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheSquareModel.c; sourceTree = "<group>"; };
 		CE71BE9D17D5388B00A817E4 /* TheLModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheLModel.c; sourceTree = "<group>"; };
@@ -154,6 +155,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		39F35D7818120F170032C4A5 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				39F35D7918120F3C0032C4A5 /* item1.bmp */,
+			);
+			name = Pictures;
+			sourceTree = "<group>";
+		};
 		CEBB1B7A17BD99DC00DE198A /* C Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +186,7 @@
 		CEBB1B7C17BD99F500DE198A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				39F35D7818120F170032C4A5 /* Pictures */,
 				CECE374117B4656C003254BF /* JosiahsProjects.1 */,
 			);
 			name = Resources;

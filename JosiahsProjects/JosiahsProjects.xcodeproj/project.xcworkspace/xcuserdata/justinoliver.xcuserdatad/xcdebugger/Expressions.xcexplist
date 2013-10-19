@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "moveL:TheLModel.c">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "0x100005170">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "testBoardModel:main.c">
+      </ContextState>
+      <ContextState
+         contextName = "moveS:TheSModel.c">
+      </ContextState>
+      <ContextState
+         contextName = "getSquarePositionArray:TheSquareModel.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "&amp;positionArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "initializeTheLModel:TheLModel.c">
+      </ContextState>
+      <ContextState
+         contextName = "lockShape:BoardModel.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "(unsigned int **)0x100111c50@10">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "initializeTheSquareModel:TheSquareModel.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "&amp;positionArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "getLPositionArray:TheLModel.c">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
