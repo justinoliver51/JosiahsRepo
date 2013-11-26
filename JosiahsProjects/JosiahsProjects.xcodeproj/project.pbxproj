@@ -12,6 +12,7 @@
 		39368BF617C94DA2004181A9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF317C94D84004181A9 /* OpenGL.framework */; };
 		39368BF917C94DB3004181A9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39368BF717C94DAC004181A9 /* GLUT.framework */; };
 		397ED0D917DFF088001387C0 /* BoardModel.c in Sources */ = {isa = PBXBuildFile; fileRef = 397ED0D817DFF088001387C0 /* BoardModel.c */; };
+		CE1627431812132A004F2526 /* PreviewModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE1627421812132A004F2526 /* PreviewModel.c */; };
 		CE71BE9C17D3A19500A817E4 /* TheSquareModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */; };
 		CE71BE9E17D5388B00A817E4 /* TheLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BE9D17D5388B00A817E4 /* TheLModel.c */; };
 		CE71BEA217D8083C00A817E4 /* TheBackwardsLModel.c in Sources */ = {isa = PBXBuildFile; fileRef = CE71BEA117D8083C00A817E4 /* TheBackwardsLModel.c */; };
@@ -53,6 +54,8 @@
 		39897B8D17C98673003CA5CE /* Model_View_Controller.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Model_View_Controller.rtf; sourceTree = "<group>"; };
 		39897B8E17CAD6AE003CA5CE /* Outline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Outline.jpg; sourceTree = "<group>"; };
 		39F35D7918120F3C0032C4A5 /* item1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = item1.bmp; sourceTree = "<group>"; };
+		CE1627411812130E004F2526 /* PreviewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewModel.h; sourceTree = "<group>"; };
+		CE1627421812132A004F2526 /* PreviewModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PreviewModel.c; sourceTree = "<group>"; };
 		CE71BE9A17D39F9500A817E4 /* TheSquareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheSquareModel.h; sourceTree = "<group>"; };
 		CE71BE9B17D3A19500A817E4 /* TheSquareModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheSquareModel.c; sourceTree = "<group>"; };
 		CE71BE9D17D5388B00A817E4 /* TheLModel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TheLModel.c; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				39368BCE17C5AB58004181A9 /* ScoreModel.c */,
 				CEBB1B8517CD9A6900DE198A /* TimeModel.h */,
 				CEBB1B8317CD991400DE198A /* TimeModel.c */,
+				CE1627411812130E004F2526 /* PreviewModel.h */,
+				CE1627421812132A004F2526 /* PreviewModel.c */,
 				CEBB1B8917D154A100DE198A /* Shapes */,
 			);
 			name = Models;
@@ -310,6 +315,7 @@
 				CE71BEA817D95EDE00A817E4 /* TheSModel.c in Sources */,
 				CE71BEAB17D960F900A817E4 /* TheTModel.c in Sources */,
 				397ED0D917DFF088001387C0 /* BoardModel.c in Sources */,
+				CE1627431812132A004F2526 /* PreviewModel.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
